@@ -9,8 +9,13 @@ public class Player extends Creature{
 
 	public Game game;
 	
+	float x;
+	float y;
+	
 	public Player(Game game, float x, float y,int width,int height) {
 		super(x, y,width,height);
+		this.x = x;
+		this.y = y;
 		this.game = game;
 	}
 
@@ -24,11 +29,16 @@ public class Player extends Creature{
 			x-=3;
 		if(game.getKeyManager().right)
 			x+=3;
+		
+		theta++;
 	}
-
+	
+	int theta;
 
 	public void render(Graphics g) {
 		g.drawImage(Assets.player, (int)x, (int)y, null);
+		
+		
 	}
 	
 

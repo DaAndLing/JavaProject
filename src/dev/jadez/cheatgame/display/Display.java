@@ -5,6 +5,11 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+
+
+/** Display the application
+ *  Basically NO NEED TO MODIFY
+ *  */
 public class Display {
 	
 	private JFrame frame;

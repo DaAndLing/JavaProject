@@ -1,21 +1,16 @@
 package dev.jadez.cheatgame;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-
 import dev.jadez.cheatgame.display.*;
 import dev.jadez.cheatgame.gfx.Assets;
-import dev.jadez.cheatgame.gfx.ImageLoader;
-import dev.jadez.cheatgame.gfx.SpriteSheet;
 import dev.jadez.cheatgame.input.KeyManager;
 import dev.jadez.cheatgame.states.GameState;
 import dev.jadez.cheatgame.states.MenuState;
 import dev.jadez.cheatgame.states.State;
 
 
-
+/** Main Game class*/
 public class Game implements Runnable{
 	
 	private Display display;
@@ -28,11 +23,12 @@ public class Game implements Runnable{
 	private BufferStrategy bs;
 	private Graphics g;
 	
-	//States
+	//States of the full game
 	private State gameState;
-	private State menuState;
 	
-	//Input
+	//private State menuState;
+	
+	//Input keyManager
 	private KeyManager keyManager;
 	
 	public Game(String title,int width,int height) {
@@ -48,8 +44,9 @@ public class Game implements Runnable{
 		Assets.init();
 		
 		gameState = new GameState(this);
-		menuState = new MenuState(this);
+		//menuState = new MenuState(this);
 		
+		// set current state
 		State.setState(gameState);
 	}
 	
@@ -57,6 +54,7 @@ public class Game implements Runnable{
 		
 		keyManager.tick();
 		
+		// Use the state's tick() method
 		if(State.getState()!=null)
 			State.getState().tick();
 	}
@@ -64,6 +62,8 @@ public class Game implements Runnable{
 
 	
 	private void render() {
+		// Buffering
+		// NO NEED to modify this part!
 		bs = display.getCanvas().getBufferStrategy();
 		if(bs == null) {
 			display.getCanvas().createBufferStrategy(3);	
@@ -74,49 +74,48 @@ public class Game implements Runnable{
 		// Clear Screen
 		g.clearRect(0, 0, width, height);
 		
-		// Draw Here!
 		
+		// Draw HERE!
+		
+		// Calling state's render()
 		if(State.getState()!=null)
 			State.getState().render(g);
 		
-		// End Here!
-		
-		
+		// End HERE!
+				
 		bs.show();
 		g.dispose();
 	}
 	
+	/** Game class will first run this method
+	 * since it implements Runnable
+	 */
 	public void run() {
 		
 		init();
 		
+		// Some tricks to make the game run on 60fps
+		// DO NOT MODIFY
 		int fps = 60;
 		double timePerTick = 1000000000 / fps; // 10^9nanosec
 		double delta = 0;
 		long now;
 		long lastTime = System.nanoTime();
-		long timer = 0;
-		int ticks = 0;
+		
 		
 		while(running) {
 			now = System.nanoTime();
 			delta += (now-lastTime) / timePerTick;
-			timer += now - lastTime;
 			lastTime = now;
 			
 			if(delta >= 1) {
 				tick();
 				render();
-				ticks++;
 				delta--;
 			}
 			
-			if(timer >= 1000000000) {
-				//System.out.println("Ticks and Frames: "+ticks);
-				ticks = 0;
-				timer = 0;
-			}
 		}
+		// DO NOT MODIFY
 		
 		stop();
 		

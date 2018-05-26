@@ -2,6 +2,9 @@ package dev.jadez.cheatgame.entities;
 
 import java.awt.Graphics;
 
+
+/** An abstract class for all objects on the screen*/
+
 public abstract class Entity {
 
 	protected float x,y;
