@@ -2,6 +2,7 @@ package dev.jadez.cheatgame;
 
 /** Class used to launch a game
  *  Also a Main class
+ *  
  */
 public class Launcher {
 
