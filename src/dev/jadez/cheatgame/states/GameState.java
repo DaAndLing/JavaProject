@@ -13,7 +13,7 @@ public class GameState extends State{
 	private Scan scan;
 	public GameState(Game game) {
 		super(game);
-		player = new Player(game,100,100,0, 0);
+		player = new Player(game,100,100,32, 32);
 		scan = new Scan(100, 15, 0, 50, 50);
 	}
 	
