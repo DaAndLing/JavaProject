@@ -1,10 +1,15 @@
 package dev.jadez.cheatgame;
 
+import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+
+import javax.swing.JFrame;
+
 import dev.jadez.cheatgame.display.*;
 import dev.jadez.cheatgame.gfx.Assets;
 import dev.jadez.cheatgame.input.KeyManager;
+import dev.jadez.cheatgame.input.MouseManager;
 import dev.jadez.cheatgame.states.GameState;
 import dev.jadez.cheatgame.states.MenuState;
 import dev.jadez.cheatgame.states.State;
@@ -14,6 +19,9 @@ import dev.jadez.cheatgame.states.State;
 public class Game implements Runnable{
 	
 	private Display display;
+	private Canvas canvas;
+	private JFrame frame;
+	
 	public int width,height;
 	public String title;
 	
@@ -25,29 +33,40 @@ public class Game implements Runnable{
 	
 	//States of the full game
 	private State gameState;
-	
+	private State menuState;
 	//private State menuState;
 	
-	//Input keyManager
+	//Input Manager
 	private KeyManager keyManager;
+	private MouseManager mouseManager;
 	
 	public Game(String title,int width,int height) {
 		this.width = width;
 		this.height = height;
 		this.title = title;	
 		keyManager = new KeyManager();
+		mouseManager = new MouseManager();
 	}
 	
 	private void init() {
 		display = new Display(title,width,height);
 		display.getFrame().addKeyListener(keyManager);
+		display.getFrame().addMouseListener(mouseManager);
+		display.getFrame().addMouseMotionListener(mouseManager);
+		display.getCanvas().addMouseListener(mouseManager);
+		display.getCanvas().addMouseMotionListener(mouseManager);
+		
 		Assets.init();
 		
+		canvas = display.getCanvas();
+		frame = display.getFrame();
+		
 		gameState = new GameState(this);
-		//menuState = new MenuState(this);
+		menuState = new MenuState(this);
 		
 		// set current state
 		State.setState(gameState);
+		//State.setState(menuState);
 	}
 	
 	private void tick() {
@@ -125,6 +144,10 @@ public class Game implements Runnable{
 		return keyManager;
 	}
 	
+	public MouseManager getMouseManager() {
+		return mouseManager;
+	}
+	
 	public synchronized void start() {
 		if(running)
 			return;
@@ -142,6 +165,14 @@ public class Game implements Runnable{
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public JFrame getFrame() {
+		return frame;
+	}
+	
+	public Canvas getCanvas() {
+		return canvas;
 	}
 }
 
