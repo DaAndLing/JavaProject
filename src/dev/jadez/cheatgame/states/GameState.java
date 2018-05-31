@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import dev.jadez.cheatgame.Game;
 import dev.jadez.cheatgame.entities.Scan;
 import dev.jadez.cheatgame.entities.creatures.Player;
+import dev.jadez.cheatgame.gfx.Assets;
 
 public class GameState extends State{
 
@@ -18,6 +19,7 @@ public class GameState extends State{
 	
 	public void tick() {
 		player.tick();
+		scan.tick();
 	}
 
 
