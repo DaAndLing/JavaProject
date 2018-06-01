@@ -23,7 +23,6 @@ public class Desk extends Entity{
 	{
 		for(int i = 0; i < 17; i++)
 			deskArray[0] = new Desk(300, 300, 50, 50);
-
 	}
 	
 	@Override

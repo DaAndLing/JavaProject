@@ -27,7 +27,6 @@ public class GameState extends State{
 			deskArray[i] = new Desk(0, 0, 0, 0);	//temporary position we have to correct
 		forSetDesk = new Desk(0, 0, 0, 0);
 		forSetDesk.setDeskPosition(deskArray);
-
 	}
 	
 	public void tick() {
@@ -50,7 +49,8 @@ public class GameState extends State{
 	public void render(Graphics g) {
 		player.render(g);
 		teacher.render(g);
-		deskArray[0].render(g);
+		for(int i = 0; i < 17; i++)
+			deskArray[i].render(g);
 	}
 	
 	
