@@ -1,6 +1,7 @@
 package dev.jadez.cheatgame.entities.creatures;
 
 import java.awt.Graphics;
+import java.awt.Point;
 
 import dev.jadez.cheatgame.Game;
 import dev.jadez.cheatgame.gfx.Assets;
@@ -10,8 +11,8 @@ public class Player extends Creature {
 	public Game game;
 
 	int move_amount = 3;
-	float x;
-	float y;
+	protected float x;
+	protected float y;
 
 	public Player(Game game, float x, float y, int width, int height) {
 		super(x, y, width, height);
@@ -20,6 +21,11 @@ public class Player extends Creature {
 		this.game = game;
 	}
 
+	public Point getPlayerPosition()
+	{
+		return new Point((int)x, (int)y);
+	}
+	
 	public void tick() {
 		if (game.getKeyManager().up)
 			if (y - move_amount >= 0)
@@ -38,7 +44,6 @@ public class Player extends Creature {
 
 	public void render(Graphics g) {
 		g.drawImage(Assets.player, (int) x, (int) y, null);
-
 	}
 
 }
