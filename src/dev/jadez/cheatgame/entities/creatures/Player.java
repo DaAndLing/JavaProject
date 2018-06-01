@@ -15,7 +15,7 @@ public class Player extends Creature {
 
 	public Player(Game game, float x, float y, int width, int height) {
 		super(x, y, width, height);
-		this.x = x;
+		this.x = x;	//x y has already declared in Entity?
 		this.y = y;
 		this.game = game;
 	}

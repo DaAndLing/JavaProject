@@ -40,6 +40,13 @@ public class Game implements Runnable{
 	private KeyManager keyManager;
 	private MouseManager mouseManager;
 	
+	//global time and fps
+	public int fps;
+	public double timePerTick; // 10^9nanosec
+	public double delta = 0;
+	public long now;
+	public long lastTime; 
+	
 	public Game(String title,int width,int height) {
 		this.width = width;
 		this.height = height;
@@ -115,11 +122,11 @@ public class Game implements Runnable{
 		
 		// Some tricks to make the game run on 60fps
 		// DO NOT MODIFY
-		int fps = 60;
-		double timePerTick = 1000000000 / fps; // 10^9nanosec
-		double delta = 0;
-		long now;
-		long lastTime = System.nanoTime();
+		fps = 60;
+		timePerTick = 1000000000 / fps; // 10^9nanosec
+		delta = 0;
+		//long now;
+		lastTime = System.nanoTime();
 		
 		
 		while(running) {
