@@ -13,7 +13,7 @@ import dev.jadez.cheatgame.*;
 public class Scan {
 	double height,theta,rotation;
 	float x,y;
-	Polygon poly;
+	private Polygon poly;
 	Point point1, point2, point3;
 	Point storepoint2, storepoint3;
 	double Angle;

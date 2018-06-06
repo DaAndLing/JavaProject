@@ -25,6 +25,7 @@ public class Desk extends Entity{
 			deskArray[0] = new Desk(300, 300, 50, 50);
 	}
 	
+
 	@Override
 	public void tick() {
 		//Doing Nothing
