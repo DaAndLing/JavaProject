@@ -13,13 +13,14 @@ public class GameState extends State{
 	private Teacher teacher;
 	private Desk[] deskArray;
 	private Desk forSetDesk;
+	private int progress;//test
 	
 	public GameState(Game game) {
 		super(game);
 		player = new Player(game,100,100,32, 32);
 		teacher = new Teacher(game, 150, 150, 32, 32, 500, 20);//x, y, width, height
 																// scanHeight, theta
-
+		progress = 0;
 		//a little bit tricky here, I use a method in class Desk to initialize all the table posiotion
 		//coz I don't want GameState to be lengthy
 		deskArray = new Desk[17];

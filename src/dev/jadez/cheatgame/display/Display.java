@@ -1,9 +1,12 @@
 package dev.jadez.cheatgame.display;
 
+import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 
 
 
@@ -14,7 +17,7 @@ public class Display {
 	
 	private JFrame frame;
 	private Canvas canvas;
-	
+	public JProgressBar jpb;  
 	private String title;
 	private int width,height;
 	
@@ -41,6 +44,16 @@ public class Display {
 		canvas.setMinimumSize(new Dimension(width, height));
 		canvas.setFocusable(false);
 		
+        JPanel stp = new JPanel();  
+        jpb = new JProgressBar();  
+        jpb.setMinimum(0);  
+        jpb.setMaximum(100);  
+        stp.add(jpb);  
+        jpb.setValue(50);
+        jpb.setStringPainted(true);
+        frame.setContentPane(stp);
+       
+        frame.add(stp);  
 		frame.add(canvas);
 		frame.pack();
 	}
