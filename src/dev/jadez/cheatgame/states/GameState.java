@@ -7,6 +7,7 @@ import dev.jadez.cheatgame.entities.ProgressBar;
 import dev.jadez.cheatgame.entities.creatures.Enemy;
 import dev.jadez.cheatgame.entities.creatures.Player;
 import dev.jadez.cheatgame.entities.creatures.Teacher;
+import dev.jadez.cheatgame.entities.fixedObject.Classroom;
 import dev.jadez.cheatgame.entities.fixedObject.Desk;
 
 public class GameState extends State{
@@ -16,6 +17,7 @@ public class GameState extends State{
 	private Enemy enemy;
 	private Desk[] deskArray;
 	private Desk forSetDesk;
+	private Classroom classroom;
 	private ProgressBar progressbar;
 	private boolean full;//progress bar full
 	
@@ -24,6 +26,9 @@ public class GameState extends State{
 		player = new Player(game,100,100,32, 32);
 		teacher = new Teacher(game, 150, 150, 32, 32, 500, 20);//x, y, width, height
 																// scanHeight, theta
+		
+		classroom = new Classroom();
+		
 		progressbar = new ProgressBar(game);
 		enemy = new Enemy(500, 500, 32, 32);
 		//a little bit tricky here, I use a method in class Desk to initialize all the table posiotion
@@ -65,12 +70,17 @@ public class GameState extends State{
 
 
 	public void render(Graphics g) {
-		player.render(g);
-		teacher.render(g);
+		classroom.render(g);
+		
+		
 		for(int i = 0; i < 17; i++)
 			deskArray[i].render(g);
 		progressbar.render(g);
 		enemy.render(g);
+		
+		
+		player.render(g);
+		teacher.render(g);
 	}
 	
 	

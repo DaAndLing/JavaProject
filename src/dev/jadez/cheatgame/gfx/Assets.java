@@ -8,6 +8,8 @@ public class Assets {
 
 	public static BufferedImage player,dirt,grass,stone,tree;
 	
+	public static BufferedImage classBack,desks;
+	
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
 		
@@ -17,5 +19,7 @@ public class Assets {
 		stone = sheet.crop(width*3, 0, width, height);
 		tree = sheet.crop(0, height, width, height);
 		
+		classBack = ImageLoader.loadImage("/classroom/classroom.png");
+		desks = ImageLoader.loadImage("/classroom/desks.png");
 	}
 }
