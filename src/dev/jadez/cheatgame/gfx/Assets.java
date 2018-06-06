@@ -8,6 +8,10 @@ public class Assets {
 
 	public static BufferedImage player,dirt,grass,stone,tree;
 	
+	public static BufferedImage menuBackground,btnStart,classroomBackground;
+	
+	public static BufferedImage[] desk = new BufferedImage[16];
+	
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
 		
@@ -17,5 +21,12 @@ public class Assets {
 		stone = sheet.crop(width*3, 0, width, height);
 		tree = sheet.crop(0, height, width, height);
 		
+		menuBackground = ImageLoader.loadImage("/classroom/StartPage.png");
+		btnStart = ImageLoader.loadImage("/classroom/btnStart.png");
+		classroomBackground = ImageLoader.loadImage("/classroom/classroom.png");
+		
+		for(int i=0;i<16;i++) {
+			desk[i] = ImageLoader.loadImage("/classroom/desk"+(i+1)+".png");
+		}
 	}
 }
