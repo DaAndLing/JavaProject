@@ -25,8 +25,6 @@ public class Assets {
 		btnStart = ImageLoader.loadImage("/classroom/btnStart.png");
 		classroomBackground = ImageLoader.loadImage("/classroom/classroom.png");
 		
-		for(int i=0;i<16;i++) {
-			desk[i] = ImageLoader.loadImage("/classroom/desk"+(i+1)+".png");
-		}
+		
 	}
 }
