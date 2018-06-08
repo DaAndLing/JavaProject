@@ -13,19 +13,13 @@ public class Desk extends Entity{
 	public Desk(float x, float y, int width, int height) {
 		super(x, y, width, height);
 		range = new Polygon();
-		range.addPoint((int)x + width / 2, (int)y + height / 2);
-		range.addPoint((int)x + width / 2, (int)y - height / 2);
-		range.addPoint((int)x - width / 2, (int)y + height / 2);
-		range.addPoint((int)x - width / 2, (int)y - height / 2);
+		range.addPoint((int)x, (int)y);
+		range.addPoint((int)x + width, (int)y);
+		range.addPoint((int)x + width, (int)y + height);
+		range.addPoint((int)x, (int)y + height);
 	}
 
-	public void setDeskPosition(Desk[] deskArray)
-	{
-		for(int i = 0; i < 17; i++)
-			deskArray[0] = new Desk(300, 300, 50, 50);
-	}
 	
-
 	@Override
 	public void tick() {
 		//Doing Nothing
