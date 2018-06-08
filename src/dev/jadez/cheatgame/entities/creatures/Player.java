@@ -34,25 +34,25 @@ public class Player extends Creature {
 		if (game.getKeyManager().up)
 		{
 			if(!checkCollision(x, y - move_amount) && !checkCollision(x + width, y - move_amount))
-				if (y - move_amount >= 0)
+				if (y - move_amount >= 84)
 					y -= move_amount;
 		}
 		if (game.getKeyManager().down)
 		{
 			if(!checkCollision(x, y + height + move_amount) && !checkCollision(x + width, y + height + move_amount))
-				if (y + move_amount + this.height <= 800)
+				if (y + move_amount + this.height <= 716)
 					y += move_amount;
 		}
 		if (game.getKeyManager().left)
 		{	
 			if(!checkCollision(x - move_amount, y) && !checkCollision(x - move_amount, y + height))
-				if (x - move_amount >= 0)
+				if (x - move_amount >= 63)
 					x -= move_amount;
 		}
 		if (game.getKeyManager().right)
 		{
 			if(!checkCollision(x + width + move_amount, y) && !checkCollision(x + width + move_amount, y + height))
-				if (x + move_amount + this.width <= 600)
+				if (x + move_amount + this.width <= 537)
 					x += move_amount;
 		}
 	}
@@ -62,12 +62,15 @@ public class Player extends Creature {
 	}
 	
 	public boolean checkCollision(int x,int y) {
-		if(classroom.getDesk().getRange().contains(new Point(x,y))) {
-			System.out.println("bang");
-			return true;
+		boolean bang = false;
+		for(int i = 0; i < 9; i++)
+		{
+			if(classroom.getDesk()[i].getRange().contains(new Point(x,y))) {
+//				System.out.println("bang");
+				bang = true;
+			}
 		}
-		else return false;
-			
+		return bang;
 	}
 
 }
