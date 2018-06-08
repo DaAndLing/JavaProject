@@ -13,6 +13,7 @@ import dev.jadez.cheatgame.*;
 public class Scan {
 	double height,theta,rotation;
 	float x,y;
+	double rotateSpeed;
 	protected Polygon poly;
 	Point point1, point2, point3;
 	Point storepoint2, storepoint3;
@@ -26,6 +27,7 @@ public class Scan {
 		this.x=x;
 		this.y=y;
 		this.game = game;
+		this.rotateSpeed = 0.01;
 		
 		poly = new Polygon();
 		point1 = new Point();
@@ -43,7 +45,7 @@ public class Scan {
 		point3.x = (int)(x+height);
 		point3.y = y+ (int)((height)*Math.tan(Math.toRadians(theta)));
 
-		Angle = 30;
+		Angle = 0;
 		
 	}
 	
@@ -61,7 +63,10 @@ public class Scan {
 		point3.y = y+ (int)((height)*Math.tan(Math.toRadians(theta)));
 		
 		if(game.delta >= 1) {
-			Angle+= 0.01;
+			if(Angle > 3.1415926 || Angle < 0)				
+				rotateSpeed *= -1;
+			Angle+= rotateSpeed;
+//			System.out.println(Angle);
 		}
 	
 		AffineTransform.getRotateInstance(Angle, x, y).transform(point2, storepoint2);

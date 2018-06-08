@@ -24,7 +24,7 @@ public class GameState extends State{
 	
 	public GameState(Game game) {
 		super(game);
-		teacher = new Teacher(game, 150, 150, 32, 32, 500, 20);//x, y, width, height
+		teacher = new Teacher(game, 150, 190, 32, 32, 400, 20);//x, y, width, height
 																// scanHeight, theta	
 		classroom = new Classroom();
 		player = new Player(classroom, game,100,100,32, 32);

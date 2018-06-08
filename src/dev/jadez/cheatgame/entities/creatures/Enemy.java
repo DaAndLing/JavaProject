@@ -12,10 +12,10 @@ public class Enemy extends Creature{
 		super(x, y, width, height);
 		
 		range = new Polygon();
-		range.addPoint((int)x + width, (int)y + height);
-		range.addPoint((int)x + width, (int)y - height);
-		range.addPoint((int)x - width, (int)y + height);
 		range.addPoint((int)x - width, (int)y - height);
+		range.addPoint((int)x + 2 * width, (int)y - height);
+		range.addPoint((int)x + 2 * width, (int)y + 2 * height);
+		range.addPoint((int)x - width, (int)y + 2 * height);
 		
 	}
 	
