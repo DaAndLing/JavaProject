@@ -59,8 +59,13 @@ public class GameState extends State{
 			progressbar.tick(false);
 		
 		full = progressbar.getFull();
-		if(full)
-			System.out.println("win");
+		if(full) {
+			
+			//System.out.println("win");
+			State.setState(game.getState(2));
+			
+		}
+			
 	}
 
 

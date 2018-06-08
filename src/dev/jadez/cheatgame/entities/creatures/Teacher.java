@@ -28,7 +28,9 @@ public class Teacher extends Creature{
 	@Override
 	public void tick() {
 		
-		if(game.delta >= 1) {
+		//new
+		if(game.stateNumber == 1) {
+			if(game.delta >= 1) {
 			x += move_amount;
 			if(x > 500 || x < 100)
 				move_amount *= -1;		
@@ -37,7 +39,20 @@ public class Teacher extends Creature{
 		scan.tick((int)x + width / 2, (int)y + height / 2);//plus extra offset to 
 														   //make sure the vertex of
 														   //triangle is at the center
-															//of the teacher		
+															//of the teacher	
+		}
+		
+		else if(game.stateNumber == 2) {
+			if(game.delta >= 1) {
+				y += move_amount;
+				if(y > 500 || y < 100)
+					move_amount *= -1;		
+			}
+			
+			scan.tick((int)x + width / 2, (int)y + height / 2);
+			
+		}
+
 	}
 	@Override	
 	public void render(Graphics g) {

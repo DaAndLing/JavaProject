@@ -11,6 +11,7 @@ import dev.jadez.cheatgame.gfx.Assets;
 import dev.jadez.cheatgame.input.KeyManager;
 import dev.jadez.cheatgame.input.MouseManager;
 import dev.jadez.cheatgame.states.GameState;
+import dev.jadez.cheatgame.states.GameState2;
 import dev.jadez.cheatgame.states.MenuState;
 import dev.jadez.cheatgame.states.State;
 
@@ -23,6 +24,7 @@ public class Game implements Runnable{
 	private JFrame frame;
 	
 	public int width,height;
+	public int stateNumber;
 	public String title;
 	
 	private boolean running = false;
@@ -33,6 +35,7 @@ public class Game implements Runnable{
 	
 	//States of the full game
 	private State gameState;
+	private State gameState2;
 	private State menuState;
 	//private Menu menu;
 	//private State menuState;
@@ -71,6 +74,7 @@ public class Game implements Runnable{
 		frame = display.getFrame();
 		
 		gameState = new GameState(this);
+		gameState2 = new GameState2(this);
 		menuState = new MenuState(this);
 		
 		// set current state
@@ -85,7 +89,6 @@ public class Game implements Runnable{
 		// Use the state's tick() method
 		if(State.getState()!=null) {
 			State.getState().tick();
-			
 		}
 			
 	}
@@ -119,7 +122,6 @@ public class Game implements Runnable{
 		bs.show();
 		g.dispose();
 	}
-	
 	/** Game class will first run this method
 	 * since it implements Runnable
 	 */
@@ -190,10 +192,22 @@ public class Game implements Runnable{
 	}
 	//new
 	public State getState(int i) {
-		if(i == 0) return menuState;
-		if(i == 1) return gameState;
-		else return null;
+		if(i == 0) {
+			stateNumber = 0;
+			return menuState;
+		}
+		if(i == 1) {
+			stateNumber = 1;
+			return gameState;
+		}
+		if(i == 2) {
+			stateNumber = 2;
+			return gameState2;
+		}
+		else {
+			stateNumber = -1;
+			return null;
+		}
 	}
-	//new
 }
 

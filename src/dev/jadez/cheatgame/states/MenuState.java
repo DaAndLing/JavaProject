@@ -34,16 +34,11 @@ public class MenuState extends State{
 
 
 	public void render(Graphics g) {
-		//new
+
 		g.drawImage(Assets.StartPage, 0, 0, null);
-		
-		Graphics2D g2d = (Graphics2D)g;
-		
-		//g2d.draw(playbutton);
-		//g.drawString("play", playbutton,  game.width/2,100);
-		
+		Graphics2D g2d = (Graphics2D)g;		
 		g.drawImage(Assets.btnStart, game.width/2 - 131 , 500, null);
-		//new
+
 	}
 
 }

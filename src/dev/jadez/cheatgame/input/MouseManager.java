@@ -36,7 +36,6 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		else if(e.getButton() == MouseEvent.BUTTON3)
 			rightPressed = true;
 		
-		//new
 		int mx = e.getX();
 		int my = e.getY();
 		
@@ -48,7 +47,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			
 		}
 		
-		//new
+
 	}
 	
 	// Getters

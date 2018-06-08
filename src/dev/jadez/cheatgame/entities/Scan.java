@@ -1,4 +1,4 @@
-package dev.jadez.cheatgame.entities.creatures;
+package dev.jadez.cheatgame.entities;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -13,8 +13,7 @@ import dev.jadez.cheatgame.*;
 public class Scan {
 	double height,theta,rotation;
 	float x,y;
-	double rotateSpeed;
-	protected Polygon poly;
+	private Polygon poly;
 	Point point1, point2, point3;
 	Point storepoint2, storepoint3;
 	double Angle;
@@ -27,7 +26,6 @@ public class Scan {
 		this.x=x;
 		this.y=y;
 		this.game = game;
-		this.rotateSpeed = 0.01;
 		
 		poly = new Polygon();
 		point1 = new Point();
@@ -45,7 +43,7 @@ public class Scan {
 		point3.x = (int)(x+height);
 		point3.y = y+ (int)((height)*Math.tan(Math.toRadians(theta)));
 
-		Angle = 0;
+		Angle = 30;
 		
 	}
 	
@@ -62,24 +60,9 @@ public class Scan {
 		point3.x = (int)(x+height);
 		point3.y = y+ (int)((height)*Math.tan(Math.toRadians(theta)));
 		
-		if(game.stateNumber == 1) {
-			if(game.delta >= 1) {
-				if(Angle > 3.1415926 || Angle < 0)				
-					rotateSpeed *= -1;
-			Angle+= rotateSpeed;
-//			System.out.println(Angle);
-			}
+		if(game.delta >= 1) {
+			Angle+= 0.01;
 		}
-		else if(game.stateNumber == 2) {
-			if(game.delta >= 1) {
-				if(Angle > 3.1415926 || Angle < 0)				
-					rotateSpeed *= -1;
-				Angle+= rotateSpeed;
-//				System.out.println(Angle);
-				}
-			
-		}
-		
 	
 		AffineTransform.getRotateInstance(Angle, x, y).transform(point2, storepoint2);
 		AffineTransform.getRotateInstance(Angle, x, y).transform(point3, storepoint3);
@@ -87,7 +70,6 @@ public class Scan {
 		poly.addPoint(point1.x, point1.y);
 		poly.addPoint(storepoint2.x, storepoint2.y);
 		poly.addPoint(storepoint3.x, storepoint3.y);
-		
 	}
 	public void render(Graphics g) {
 		g.setColor(new Color(255, 255, 0,128));
