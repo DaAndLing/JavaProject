@@ -34,6 +34,7 @@ public class Game implements Runnable{
 	//States of the full game
 	private State gameState;
 	private State menuState;
+	//private Menu menu;
 	//private State menuState;
 	
 	//Input Manager
@@ -52,7 +53,8 @@ public class Game implements Runnable{
 		this.height = height;
 		this.title = title;	
 		keyManager = new KeyManager();
-		mouseManager = new MouseManager();
+		//new
+		mouseManager = new MouseManager(this);
 	}
 	
 	private void init() {
@@ -72,8 +74,8 @@ public class Game implements Runnable{
 		menuState = new MenuState(this);
 		
 		// set current state
-		State.setState(gameState);
-		//State.setState(menuState);
+		//State.setState(gameState);
+		State.setState(menuState);
 	}
 	
 	private void tick() {
@@ -81,8 +83,11 @@ public class Game implements Runnable{
 		keyManager.tick();
 		
 		// Use the state's tick() method
-		if(State.getState()!=null)
+		if(State.getState()!=null) {
 			State.getState().tick();
+			
+		}
+			
 	}
 	
 
@@ -104,8 +109,10 @@ public class Game implements Runnable{
 		// Draw HERE!
 		
 		// Calling state's render()
-		if(State.getState()!=null)
-			State.getState().render(g);
+		if(State.getState()!=null) {
+			State.getState().render(g);	
+		}
+			
 		
 		// End HERE!
 				
@@ -181,5 +188,12 @@ public class Game implements Runnable{
 	public Canvas getCanvas() {
 		return canvas;
 	}
+	//new
+	public State getState(int i) {
+		if(i == 0) return menuState;
+		if(i == 1) return gameState;
+		else return null;
+	}
+	//new
 }
 

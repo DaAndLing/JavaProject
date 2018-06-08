@@ -4,13 +4,20 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import dev.jadez.cheatgame.Game;
+import dev.jadez.cheatgame.states.GameState;
+import dev.jadez.cheatgame.states.State;
+
 public class MouseManager implements MouseListener,MouseMotionListener {
 
+	private Game game;
 	private boolean leftPressed, rightPressed;
 	private int mouseX,mouseY;
-	public MouseManager() {
-		
+	public MouseManager(Game game) {
+		this.game = game;
 	}
+	
+
 	
 
 	@Override
@@ -28,6 +35,20 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			leftPressed = true;
 		else if(e.getButton() == MouseEvent.BUTTON3)
 			rightPressed = true;
+		
+		//new
+		int mx = e.getX();
+		int my = e.getY();
+		
+		if(mx >= game.width/2 - 131  && mx <= game.width/2 + 131 ) {
+			if(my >= 500 && my <=600) {
+				//System.out.println("HIT");
+				State.setState(game.getState(1));
+			}
+			
+		}
+		
+		//new
 	}
 	
 	// Getters
