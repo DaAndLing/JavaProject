@@ -11,7 +11,7 @@ public class Teacher extends Creature{
 	
 	public Scan scan;
 	public Game game;
-	int move_amount = 2;
+	int move_amount = 1;
 	
 	public Teacher(Game game, float x, float y, int width, int height,
 				float scanHeight,double theta) {
@@ -31,9 +31,9 @@ public class Teacher extends Creature{
 		//new
 		if(game.stateNumber == 1) {
 			if(game.delta >= 1) {
-			x += move_amount;
-			if(x > 500 || x < 100)
-				move_amount *= -1;		
+			//x += move_amount;
+			//if(x > 500 || x < 100)
+				//move_amount *= -1;		
 		}
 		
 		scan.tick((int)x + width / 2, (int)y + height / 2);//plus extra offset to 
@@ -43,6 +43,26 @@ public class Teacher extends Creature{
 		}
 		
 		else if(game.stateNumber == 2) {
+			if(game.delta >= 1) {
+				y += move_amount;
+				if(y > 500 || y < 180)
+					move_amount *= -1;		
+			}
+			
+			scan.tick((int)x + width / 2, (int)y + height / 2);
+			
+		}
+		else if(game.stateNumber == 3) {
+			if(game.delta >= 1) {
+				y += move_amount;
+				if(y > 500 || y < 100)
+					move_amount *= -1;		
+			}
+			
+			scan.tick((int)x + width / 2, (int)y + height / 2);
+			
+		}
+		else if(game.stateNumber == 4) {
 			if(game.delta >= 1) {
 				y += move_amount;
 				if(y > 500 || y < 100)

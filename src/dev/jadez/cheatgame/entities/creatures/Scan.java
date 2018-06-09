@@ -27,8 +27,12 @@ public class Scan {
 		this.x=x;
 		this.y=y;
 		this.game = game;
+
 		this.rotateSpeed = 0.01;
-		
+
+		if(game.stateNumber == 2) {
+			this.rotateSpeed = 0.007;
+		}
 		poly = new Polygon();
 		point1 = new Point();
 		point2 = new Point();
@@ -39,12 +43,18 @@ public class Scan {
 		point1.x = x;
 		point1.y = y;
 		
+		point2.x  = x + (int)((height)*Math.tan(Math.toRadians(theta)));
+		point2.y = (int)(y+height);
+		
+		point3.x =  x - (int)((height)*Math.tan(Math.toRadians(theta)));
+		point3.y = (int)(y+height);
+		/*
 		point2.x  = (int)(x+height);				
 		point2.y  = y- (int)((height)*Math.tan(Math.toRadians(theta)));
 		
 		point3.x = (int)(x+height);
 		point3.y = y+ (int)((height)*Math.tan(Math.toRadians(theta)));
-
+*/
 		Angle = 0;
 		
 	}
@@ -56,21 +66,55 @@ public class Scan {
 		point1.x = x;
 		point1.y = y;
 		
+		point2.x  = x + (int)((height)*Math.tan(Math.toRadians(theta)));
+		point2.y = (int)(y+height);
+		
+		point3.x =  x - (int)((height)*Math.tan(Math.toRadians(theta)));
+		point3.y = (int)(y+height);
+		
+		/*
 		point2.x  = (int)(x+height);				
 		point2.y  = y- (int)((height)*Math.tan(Math.toRadians(theta)));
 		
 		point3.x = (int)(x+height);
 		point3.y = y+ (int)((height)*Math.tan(Math.toRadians(theta)));
-		
+		*/
 		if(game.stateNumber == 1) {
 			if(game.delta >= 1) {
-				if(Angle > 3.1415926 || Angle < 0)				
+				if(Angle > 1.3 || Angle < -1.3)				
 					rotateSpeed *= -1;
 			Angle+= rotateSpeed;
 //			System.out.println(Angle);
 			}
 		}
 		else if(game.stateNumber == 2) {
+			if(y >= 100) {
+				if(game.delta >= 1) {
+					if(Angle > 0 || Angle < -1.7)				
+						rotateSpeed *= -1;
+					Angle+= rotateSpeed;
+//					System.out.println(Angle);
+					}
+				
+			}
+		}
+		else if(game.stateNumber == 3) {
+			
+			point2.x  = x - (int)((height)*Math.tan(Math.toRadians(theta)));
+			point2.y = (int)(y-height);
+			
+			point3.x =  x + (int)((height)*Math.tan(Math.toRadians(theta)));
+			point3.y = (int)(y-height);
+			
+			if(game.delta >= 1) {
+				if(Angle > 0.5 || Angle < 0)				
+					rotateSpeed *= -1;
+				Angle+= rotateSpeed;
+//				System.out.println(Angle);
+				}
+			
+		}
+		else if(game.stateNumber == 4) {
 			if(game.delta >= 1) {
 				if(Angle > 3.1415926 || Angle < 0)				
 					rotateSpeed *= -1;
@@ -79,7 +123,6 @@ public class Scan {
 				}
 			
 		}
-		
 	
 		AffineTransform.getRotateInstance(Angle, x, y).transform(point2, storepoint2);
 		AffineTransform.getRotateInstance(Angle, x, y).transform(point3, storepoint3);

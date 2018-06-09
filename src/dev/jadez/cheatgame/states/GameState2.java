@@ -24,12 +24,12 @@ public class GameState2 extends State{
 	
 	public GameState2(Game game) {
 		super(game);
-		teacher = new Teacher(game, 150, 190, 32, 32, 400, 20);//x, y, width, height
+		teacher = new Teacher(game, 280, 190, 32, 32, 400, 20);//x, y, width, height
 																// scanHeight, theta	
 		classroom = new Classroom();
-		player = new Player(classroom, game,100,100,32, 32);
+		player = new Player(classroom, game,120,650,32, 32);
 		progressbar = new ProgressBar(game);
-		enemy = new Enemy(500, 500, 32, 32);
+		enemy = new Enemy(430, 390, 32, 32);
 		//a little bit tricky here, I use a method in class Desk to initialize all the table posiotion
 		//coz I don't want GameState to be lengthy
 //		deskArray = new Desk[17];
