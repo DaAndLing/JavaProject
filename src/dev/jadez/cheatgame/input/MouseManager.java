@@ -35,18 +35,20 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			leftPressed = true;
 		else if(e.getButton() == MouseEvent.BUTTON3)
 			rightPressed = true;
-		
-		int mx = e.getX();
-		int my = e.getY();
-		
-		if(mx >= game.width/2 - 131  && mx <= game.width/2 + 131 ) {
-			if(my >= 500 && my <=600) {
-				//System.out.println("HIT");
-				State.setState(game.getState(1));
-			}
+		if(game.stateNumber == 0 || game.stateNumber == 5) {
 			
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if(mx >= game.width/2 - 131  && mx <= game.width/2 + 131 ) {
+				if(my >= 500 && my <=600) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(1));
+				}
+				
+			}
 		}
-		
 
 	}
 	

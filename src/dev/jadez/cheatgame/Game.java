@@ -12,6 +12,8 @@ import dev.jadez.cheatgame.input.KeyManager;
 import dev.jadez.cheatgame.input.MouseManager;
 import dev.jadez.cheatgame.states.GameState;
 import dev.jadez.cheatgame.states.GameState2;
+import dev.jadez.cheatgame.states.GameState3;
+import dev.jadez.cheatgame.states.GameState4;
 import dev.jadez.cheatgame.states.MenuState;
 import dev.jadez.cheatgame.states.State;
 
@@ -36,7 +38,11 @@ public class Game implements Runnable{
 	//States of the full game
 	private State gameState;
 	private State gameState2;
+	private State gameState3;
+	private State gameState4;
 	private State menuState;
+	private State menuStatetmp;
+	//private State gameStatetmp;
 	//private Menu menu;
 	//private State menuState;
 	
@@ -72,14 +78,21 @@ public class Game implements Runnable{
 		
 		canvas = display.getCanvas();
 		frame = display.getFrame();
-		
-		gameState = new GameState(this);
-		gameState2 = new GameState2(this);
 		menuState = new MenuState(this);
-		
+
 		// set current state
 		//State.setState(gameState);
 		State.setState(menuState);
+	}
+	
+	public void initGame() {
+		
+		menuStatetmp = new MenuState(this);
+		gameState = new GameState(this);
+		gameState2 = new GameState2(this);
+		gameState3 = new GameState3(this);
+		gameState4 = new GameState4(this);
+		
 	}
 	
 	private void tick() {
@@ -128,7 +141,7 @@ public class Game implements Runnable{
 	public void run() {
 		
 		init();
-		
+		initGame();
 		// Some tricks to make the game run on 60fps
 		// DO NOT MODIFY
 		fps = 60;
@@ -194,6 +207,7 @@ public class Game implements Runnable{
 	public State getState(int i) {
 		if(i == 0) {
 			stateNumber = 0;
+			//gameStatetmp = new GameState(this);
 			return menuState;
 		}
 		if(i == 1) {
@@ -203,6 +217,18 @@ public class Game implements Runnable{
 		if(i == 2) {
 			stateNumber = 2;
 			return gameState2;
+		}
+		if(i == 3) {
+			stateNumber = 3;
+			return gameState3;
+		}
+		if(i == 4) {
+			stateNumber = 4;
+			return gameState4;
+		}
+		if(i == 5) {
+			stateNumber = 5;
+			return menuStatetmp;
 		}
 		else {
 			stateNumber = -1;

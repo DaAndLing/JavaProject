@@ -11,8 +11,8 @@ import dev.jadez.cheatgame.entities.creatures.Teacher;
 import dev.jadez.cheatgame.entities.fixedObject.Classroom;
 import dev.jadez.cheatgame.entities.fixedObject.Desk;
 
-public class GameState2 extends State{
 
+public class GameState3 extends State{
 	private Player player;
 	private Teacher teacher;
 	private Enemy enemy;
@@ -22,7 +22,7 @@ public class GameState2 extends State{
 	private ProgressBar progressbar;
 	private boolean full;//progress bar full
 	
-	public GameState2(Game game) {
+	public GameState3(Game game) {
 		super(game);
 		teacher = new Teacher(game, 150, 190, 32, 32, 400, 20);//x, y, width, height
 																// scanHeight, theta	
@@ -51,9 +51,8 @@ public class GameState2 extends State{
 			System.out.println("got you, bitch");
 			game.initGame();
 			State.setState(game.getState(0));
-			
 		}
-			
+
 		
 		if(enemy.getRange().contains(player.getPlayerPosition()))
 		{
@@ -67,8 +66,7 @@ public class GameState2 extends State{
 		if(full) {
 			
 			//System.out.println("win");
-			//game.init();
-			State.setState(game.getState(3));
+			State.setState(game.getState(4));
 			
 		}
 			
@@ -85,5 +83,4 @@ public class GameState2 extends State{
 		player.render(g);
 		teacher.render(g);
 	}
-
 }
