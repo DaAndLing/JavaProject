@@ -60,6 +60,7 @@ public class Game implements Runnable{
 	private State storyState11;
 	private State storyState12;
 	private State storyState13;
+	private State storyState14;
 	//private State gameStatetmp;
 	//private Menu menu;
 	//private State menuState;
@@ -125,6 +126,7 @@ public class Game implements Runnable{
 		storyState11 = new StoryState(this);
 		storyState12 = new StoryState(this);
 		storyState13 = new StoryState(this);
+		storyState14 = new StoryState(this);
 	}
 	
 	private void tick() {
@@ -333,6 +335,10 @@ public class Game implements Runnable{
 		if(i == 23) {
 			stateNumber = 23;
 			return storyState13;
+		}
+		if(i == 24) {
+			stateNumber = 24;
+			return storyState14;
 		}
 		else {
 			stateNumber = -1;

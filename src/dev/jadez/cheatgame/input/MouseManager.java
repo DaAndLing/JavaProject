@@ -73,7 +73,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 14) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(15));
+			State.setState(game.getState(1));
 			return;
 		}
 		if(game.stateNumber == 15) {
@@ -97,7 +97,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 18) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(19));
+			State.setState(game.getState(2));
 			return;
 		}
 		if(game.stateNumber == 19) {
@@ -128,7 +128,13 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 23) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(1));
+			State.setState(game.getState(3));
+			return;
+		}
+		if(game.stateNumber == 24) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(4));
 			return;
 		}
 		

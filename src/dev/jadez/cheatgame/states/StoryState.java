@@ -58,5 +58,7 @@ public class StoryState extends State{
 			g.drawImage(ImageLoader.loadImage("/story/dialog12.png"), 0, 0, null);
 		if(game.stateNumber == 23)
 			g.drawImage(ImageLoader.loadImage("/story/dialog13.png"), 0, 0, null);
+		if(game.stateNumber == 24)
+			g.drawImage(ImageLoader.loadImage("/story/dialog14.png"), 0, 0, null);
 	}
 }
