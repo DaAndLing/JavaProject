@@ -238,6 +238,19 @@ public class Game implements Runnable{
 			stateNumber = 6;
 			return loseState;
 		}
+		if(i == 7) {
+			stateNumber = 7;
+			return loseState;
+		}
+		if(i == 8) {
+			stateNumber = 8;
+			return loseState;
+		}
+		if(i == 9) {
+			stateNumber = 9;
+			return loseState;
+		}
+		
 		else {
 			stateNumber = -1;
 			return null;

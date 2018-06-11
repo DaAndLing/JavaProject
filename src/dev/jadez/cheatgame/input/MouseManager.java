@@ -48,6 +48,95 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				}
 				
 			}
+			
+		}
+		if(game.stateNumber == 6) {
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(1));
+				}
+				
+			}
+			
+			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(5));
+				}
+				
+			}
+		}
+		if(game.stateNumber == 7) {
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(2));
+				}
+				
+			}
+			
+			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(5));
+				}
+				
+			}
+		}
+		if(game.stateNumber == 8) {
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(3));
+				}
+				
+			}
+			
+			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(5));
+				}
+				
+			}
+		}
+		if(game.stateNumber == 9) {
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(4));
+				}
+				
+			}
+			
+			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
+				if(my >= 700 && my <=800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(5));
+				}
+				
+			}
 		}
 
 	}

@@ -8,7 +8,7 @@ public class Assets {
 
 	public static BufferedImage player,dirt,grass,stone,tree;
 	
-	public static BufferedImage classBack,desks,btnStart,StartPage,btnMenu,btnRestart;
+	public static BufferedImage classBack,desks,btnStart,StartPage,btnMenu,btnRestart,lightbulb;
 	
 	public static BufferedImage LosePage1,LosePage2,LosePage3,LosePage4,LosePage5,LosePage6,LosePage7,LosePage8,LosePage9,LosePage10;
 	
@@ -39,6 +39,8 @@ public class Assets {
 		LosePage10 = ImageLoader.loadImage("/classroom/lose10.png");
 		btnMenu = ImageLoader.loadImage("/classroom/btnMenu.png");
 		btnRestart = ImageLoader.loadImage("/classroom/btnRestart.png");
+		
+		lightbulb = ImageLoader.loadImage("/lightbulb/lightbulb.png");
 	}
 	
 	

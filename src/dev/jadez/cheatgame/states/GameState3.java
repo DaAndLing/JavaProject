@@ -10,6 +10,7 @@ import dev.jadez.cheatgame.entities.creatures.Player;
 import dev.jadez.cheatgame.entities.creatures.Teacher;
 import dev.jadez.cheatgame.entities.fixedObject.Classroom;
 import dev.jadez.cheatgame.entities.fixedObject.Desk;
+import dev.jadez.cheatgame.gfx.Assets;
 
 
 public class GameState3 extends State{
@@ -49,7 +50,8 @@ public class GameState3 extends State{
 		//Collision detection
 		if(teacher.getpoly().contains(player.getPlayerPosition())) {
 			System.out.println("got you, bitch");
-			State.setState(game.getState(6));
+			game.initGame();
+			State.setState(game.getState(8));
 		}
 
 		
@@ -72,6 +74,7 @@ public class GameState3 extends State{
 
 
 	public void render(Graphics g) {
+		g.drawImage(Assets.lightbulb, 500, 500, null);
 		classroom.render(g);
 		
 		progressbar.render(g);
@@ -80,5 +83,7 @@ public class GameState3 extends State{
 		
 		player.render(g);
 		teacher.render(g);
+		
+		g.drawImage(Assets.lightbulb, 500, 500, null);
 	}
 }
