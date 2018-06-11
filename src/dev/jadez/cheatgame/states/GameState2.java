@@ -48,7 +48,7 @@ public class GameState2 extends State{
 		
 		//Collision detection
 		if(teacher.getpoly().contains(player.getPlayerPosition())) {
-			System.out.println("got you, bitch");
+			//System.out.println("got you, bitch");
 			game.initGame();
 			State.setState(game.getState(7));
 			

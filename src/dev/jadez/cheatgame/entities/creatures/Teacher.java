@@ -77,7 +77,7 @@ public class Teacher extends Creature{
 	@Override	
 	public void render(Graphics g) {
 		scan.render(g);
-		g.drawImage(Assets.dirt, (int) x, (int) y, null);
+		g.drawImage(Assets.teacher, (int) x, (int) y, null);
 	}
 
 }

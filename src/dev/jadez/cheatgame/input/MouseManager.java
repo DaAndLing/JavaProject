@@ -41,7 +41,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			int my = e.getY();
 			
 			if(mx >= game.width/2 - 131  && mx <= game.width/2 + 131 ) {
-				if(my >= 500 && my <=600) {
+				if(my >= 500 && my <= 600) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(1));
@@ -55,7 +55,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			int my = e.getY();
 			
 			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(1));
@@ -64,7 +64,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			}
 			
 			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(5));
@@ -77,7 +77,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			int my = e.getY();
 			
 			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(2));
@@ -86,7 +86,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			}
 			
 			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(5));
@@ -99,7 +99,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			int my = e.getY();
 			
 			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(3));
@@ -108,7 +108,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			}
 			
 			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(5));
@@ -121,7 +121,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			int my = e.getY();
 			
 			if(mx >= game.width/2 - 170  && mx <= game.width/2 ) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(4));
@@ -130,7 +130,20 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			}
 			
 			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
-				if(my >= 700 && my <=800) {
+				if(my >= 700 && my <= 800) {
+					//System.out.println("HIT");
+					//game.initGame();
+					State.setState(game.getState(5));
+				}
+				
+			}
+		}
+		if(game.stateNumber == 10) {
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if(mx >= game.width/2 - 50  && mx <= game.width/2 + 50) {
+				if(my >= 500 && my <= 600) {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(5));

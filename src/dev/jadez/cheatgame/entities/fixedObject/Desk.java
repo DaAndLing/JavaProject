@@ -27,7 +27,7 @@ public class Desk extends Entity{
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(Assets.stone, (int) x, (int) y, width, height, null);
+		g.drawImage(Assets.student, (int) x, (int) y, width, height, null);
 	}
 
 	public Polygon getRange()

@@ -6,7 +6,7 @@ public class Assets {
 	
 	private static final int  width = 32,height = 32;
 
-	public static BufferedImage player,dirt,grass,stone,tree;
+	public static BufferedImage player,teacher,student,enemy;
 	
 	public static BufferedImage classBack,desks,btnStart,StartPage,btnMenu,btnRestart,lightbulb;
 	
@@ -15,11 +15,14 @@ public class Assets {
 	public static void init() {
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sheet.png"));
 		
-		player = sheet.crop(0, 0, width, height);
-		dirt = sheet.crop(width, 0, width, height);
-		grass = sheet.crop(width*2, 0, width, height);
-		stone = sheet.crop(width*3, 0, width, height);
-		tree = sheet.crop(0, height, width, height);
+		player = ImageLoader.loadImage("/creatures/player.png");
+		teacher = ImageLoader.loadImage("/creatures/teacher.png");
+		student = ImageLoader.loadImage("/creatures/student.png");
+		enemy = ImageLoader.loadImage("/creatures/enemy.png");
+		//dirt = sheet.crop(width, 0, width, height);
+		//grass = sheet.crop(width*2, 0, width, height);
+		//stone = sheet.crop(width*3, 0, width, height);
+		//tree = sheet.crop(0, height, width, height);
 		
 		classBack = ImageLoader.loadImage("/classroom/classroom.png");
 		desks = ImageLoader.loadImage("/classroom/desks.png");

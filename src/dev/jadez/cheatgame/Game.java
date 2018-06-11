@@ -17,6 +17,7 @@ import dev.jadez.cheatgame.states.GameState4;
 import dev.jadez.cheatgame.states.LoseState;
 import dev.jadez.cheatgame.states.MenuState;
 import dev.jadez.cheatgame.states.State;
+import dev.jadez.cheatgame.states.WinState;
 
 
 /** Main Game class*/
@@ -44,6 +45,7 @@ public class Game implements Runnable{
 	private State menuState;
 	private State menuStatetmp;
 	private State loseState;
+	private State winState;
 	//private State gameStatetmp;
 	//private Menu menu;
 	//private State menuState;
@@ -81,7 +83,6 @@ public class Game implements Runnable{
 		canvas = display.getCanvas();
 		frame = display.getFrame();
 		menuState = new MenuState(this);
-		loseState = new LoseState(this);
 
 		// set current state
 		//State.setState(gameState);
@@ -96,6 +97,7 @@ public class Game implements Runnable{
 		gameState3 = new GameState3(this);
 		gameState4 = new GameState4(this);
 		loseState = new LoseState(this);
+		winState = new WinState(this);
 		
 	}
 	
@@ -250,7 +252,10 @@ public class Game implements Runnable{
 			stateNumber = 9;
 			return loseState;
 		}
-		
+		if(i == 10) {
+			stateNumber = 10;
+			return winState;
+		}
 		else {
 			stateNumber = -1;
 			return null;

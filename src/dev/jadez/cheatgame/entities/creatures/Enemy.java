@@ -21,7 +21,7 @@ public class Enemy extends Creature{
 	
 	
 	public void render(Graphics g) {
-		g.drawImage(Assets.grass, (int) x, (int) y, null);
+		g.drawImage(Assets.enemy, (int) x, (int) y, null);
 	}
 
 	public Polygon getRange()

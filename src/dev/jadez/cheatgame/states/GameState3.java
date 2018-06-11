@@ -49,7 +49,7 @@ public class GameState3 extends State{
 		
 		//Collision detection
 		if(teacher.getpoly().contains(player.getPlayerPosition())) {
-			System.out.println("got you, bitch");
+			//System.out.println("got you, bitch");
 			game.initGame();
 			State.setState(game.getState(8));
 		}
@@ -74,7 +74,7 @@ public class GameState3 extends State{
 
 
 	public void render(Graphics g) {
-		g.drawImage(Assets.lightbulb, 500, 500, null);
+		g.drawImage(Assets.lightbulb, 500, 500, 100, 100, null);
 		classroom.render(g);
 		
 		progressbar.render(g);
@@ -83,7 +83,5 @@ public class GameState3 extends State{
 		
 		player.render(g);
 		teacher.render(g);
-		
-		g.drawImage(Assets.lightbulb, 500, 500, null);
 	}
 }
