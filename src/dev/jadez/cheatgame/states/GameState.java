@@ -43,7 +43,7 @@ public class GameState extends State{
 		if(teacher.getpoly().contains(player.getPlayerPosition())) {
 			System.out.println("got you, bitch");
 			game.initGame();
-			State.setState(game.getState(0));
+			State.setState(game.getState(6));
 		}
 			
 		
