@@ -25,12 +25,12 @@ public class GameState3 extends State{
 	
 	public GameState3(Game game) {
 		super(game);
-		teacher = new Teacher(game, 120, 680, 32, 32, 400, 20);//x, y, width, height
+		teacher = new Teacher(game, 100, 190, 32, 32, 400, 20);//x, y, width, height
 																// scanHeight, theta	
 		classroom = new Classroom();
-		player = new Player(classroom, game,430,380,32, 32);
+		player = new Player(classroom, game,350,630,32, 32);
 		progressbar = new ProgressBar(game);
-		enemy = new Enemy(130, 500, 32, 32);
+		enemy = new Enemy(430, 385, 32, 32);
 		//a little bit tricky here, I use a method in class Desk to initialize all the table posiotion
 		//coz I don't want GameState to be lengthy
 //		deskArray = new Desk[17];
@@ -74,7 +74,6 @@ public class GameState3 extends State{
 
 
 	public void render(Graphics g) {
-		g.drawImage(Assets.lightbulb, 500, 500, 100, 100, null);
 		classroom.render(g);
 		
 		progressbar.render(g);

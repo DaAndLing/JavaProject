@@ -17,6 +17,7 @@ import dev.jadez.cheatgame.states.GameState4;
 import dev.jadez.cheatgame.states.LoseState;
 import dev.jadez.cheatgame.states.MenuState;
 import dev.jadez.cheatgame.states.State;
+import dev.jadez.cheatgame.states.StoryState;
 import dev.jadez.cheatgame.states.WinState;
 
 
@@ -46,6 +47,19 @@ public class Game implements Runnable{
 	private State menuStatetmp;
 	private State loseState;
 	private State winState;
+	private State storyState1;
+	private State storyState2;
+	private State storyState3;
+	private State storyState4;
+	private State storyState5;
+	private State storyState6;
+	private State storyState7;
+	private State storyState8;
+	private State storyState9;
+	private State storyState10;
+	private State storyState11;
+	private State storyState12;
+	private State storyState13;
 	//private State gameStatetmp;
 	//private Menu menu;
 	//private State menuState;
@@ -98,7 +112,19 @@ public class Game implements Runnable{
 		gameState4 = new GameState4(this);
 		loseState = new LoseState(this);
 		winState = new WinState(this);
-		
+		storyState1 = new StoryState(this);
+		storyState2 = new StoryState(this);
+		storyState3 = new StoryState(this);
+		storyState4 = new StoryState(this);
+		storyState5 = new StoryState(this);
+		storyState6 = new StoryState(this);
+		storyState7 = new StoryState(this);
+		storyState8 = new StoryState(this);
+		storyState9 = new StoryState(this);
+		storyState10 = new StoryState(this);
+		storyState11 = new StoryState(this);
+		storyState12 = new StoryState(this);
+		storyState13 = new StoryState(this);
 	}
 	
 	private void tick() {
@@ -255,6 +281,58 @@ public class Game implements Runnable{
 		if(i == 10) {
 			stateNumber = 10;
 			return winState;
+		}
+		if(i == 11) {
+			stateNumber = 11;
+			return storyState1;
+		}
+		if(i == 12) {
+			stateNumber = 12;
+			return storyState2;
+		}
+		if(i == 13) {
+			stateNumber = 13;
+			return storyState3;
+		}
+		if(i == 14) {
+			stateNumber = 14;
+			return storyState4;
+		}
+		if(i == 15) {
+			stateNumber = 15;
+			return storyState5;
+		}
+		if(i == 16) {
+			stateNumber = 16;
+			return storyState6;
+		}
+		if(i == 17) {
+			stateNumber = 17;
+			return storyState7;
+		}
+		if(i == 18) {
+			stateNumber = 18;
+			return storyState8;
+		}
+		if(i == 19) {
+			stateNumber = 19;
+			return storyState9;
+		}
+		if(i == 20) {
+			stateNumber = 20;
+			return storyState10;
+		}
+		if(i == 21) {
+			stateNumber = 21;
+			return storyState11;
+		}
+		if(i == 22) {
+			stateNumber = 22;
+			return storyState12;
+		}
+		if(i == 23) {
+			stateNumber = 23;
+			return storyState13;
 		}
 		else {
 			stateNumber = -1;

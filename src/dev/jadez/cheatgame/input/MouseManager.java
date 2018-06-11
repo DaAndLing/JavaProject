@@ -35,6 +35,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			leftPressed = true;
 		else if(e.getButton() == MouseEvent.BUTTON3)
 			rightPressed = true;
+		
 		if(game.stateNumber == 0 || game.stateNumber == 5) {
 			
 			int mx = e.getX();
@@ -45,11 +46,92 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 					//System.out.println("HIT");
 					//game.initGame();
 					State.setState(game.getState(1));
+					return;
 				}
 				
 			}
-			
 		}
+		
+		if(game.stateNumber == 11) {
+					//System.out.println("HIT");
+					//game.initGame();
+			State.setState(game.getState(12));
+			return;
+		}
+		if(game.stateNumber == 12) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(13));
+			return;
+		}
+		if(game.stateNumber == 13) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(14));
+			return;
+		}
+		if(game.stateNumber == 14) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(15));
+			return;
+		}
+		if(game.stateNumber == 15) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(16));
+			return;
+		}
+		if(game.stateNumber == 16) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(17));
+			return;
+		}
+		if(game.stateNumber == 17) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(18));
+			return;
+		}
+		if(game.stateNumber == 18) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(19));
+			return;
+		}
+		if(game.stateNumber == 19) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(20));
+			return;
+		}
+		if(game.stateNumber == 20) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(21));
+			return;
+		}
+		if(game.stateNumber == 21) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(22));
+			return;
+		}
+		if(game.stateNumber == 22) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(23));
+			return;
+		}
+		
+		if(game.stateNumber == 23) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(1));
+			return;
+		}
+		
 		if(game.stateNumber == 6) {
 			int mx = e.getX();
 			int my = e.getY();

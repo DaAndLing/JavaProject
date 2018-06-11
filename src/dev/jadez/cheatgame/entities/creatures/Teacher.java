@@ -11,7 +11,8 @@ public class Teacher extends Creature{
 	
 	public Scan scan;
 	public Game game;
-	int move_amount = 1;
+	int xmove_amount = 1;
+	int ymove_amount = 1;
 	
 	public Teacher(Game game, float x, float y, int width, int height,
 				float scanHeight,double theta) {
@@ -31,9 +32,9 @@ public class Teacher extends Creature{
 		//new
 		if(game.stateNumber == 1) {
 			if(game.delta >= 1) {
-			//x += move_amount;
+			//x += xmove_amount;
 			//if(x > 500 || x < 100)
-				//move_amount *= -1;		
+				//xmove_amount *= -1;		
 		}
 		
 		scan.tick((int)x + width / 2, (int)y + height / 2);//plus extra offset to 
@@ -44,9 +45,9 @@ public class Teacher extends Creature{
 		
 		else if(game.stateNumber == 2) {
 			if(game.delta >= 1) {
-				y += move_amount;
+				y += ymove_amount;
 				if(y > 500 || y < 180)
-					move_amount *= -1;		
+					ymove_amount *= -1;		
 			}
 			
 			scan.tick((int)x + width / 2, (int)y + height / 2);
@@ -54,19 +55,36 @@ public class Teacher extends Creature{
 		}
 		else if(game.stateNumber == 3) {
 			if(game.delta >= 1) {
-				y += move_amount;
-				if(y > 500 || y < 100)
-					move_amount *= -1;		
-			}
-			
-			scan.tick((int)x + width / 2, (int)y + height / 2);
-			
+				x += xmove_amount*2;
+				if(x > 275) {
+					xmove_amount = 0;
+					y += ymove_amount*2;	
+				}
+				if(y > 545) {
+					ymove_amount *= -3;
+				}
+				if(y < 190 && x > 275) {
+					ymove_amount = 0;
+					xmove_amount = -1;
+				}
+				if(x < 100) {
+					xmove_amount *= -1;
+					ymove_amount = 1;
+					x = 100;
+					y = 190;
+				}
+		}
+		
+		scan.tick((int)x + width / 2, (int)y + height / 2);//plus extra offset to 
+														   //make sure the vertex of
+														   //triangle is at the center
+															//of the teacher	
 		}
 		else if(game.stateNumber == 4) {
 			if(game.delta >= 1) {
-				y += move_amount;
+				y += ymove_amount;
 				if(y > 500 || y < 100)
-					move_amount *= -1;		
+					ymove_amount *= -1;		
 			}
 			
 			scan.tick((int)x + width / 2, (int)y + height / 2);

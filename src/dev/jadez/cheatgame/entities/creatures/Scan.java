@@ -107,21 +107,26 @@ public class Scan {
 			point3.y = (int)(y-height);
 			
 			if(game.delta >= 1) {
+				if(Angle > 2.5 || Angle < -0.5)				
+					rotateSpeed *= -1;
+				Angle += rotateSpeed*2;
+				//System.out.println(Angle);
+				}
+			
+		}
+		else if(game.stateNumber == 4) {
+			point2.x  = x - (int)((height)*Math.tan(Math.toRadians(theta)));
+			point2.y = (int)(y-height);
+			
+			point3.x =  x + (int)((height)*Math.tan(Math.toRadians(theta)));
+			point3.y = (int)(y-height);
+			
+			if(game.delta >= 1) {
 				if(Angle > 0.5 || Angle < 0)				
 					rotateSpeed *= -1;
 				Angle+= rotateSpeed;
 //				System.out.println(Angle);
 				}
-			
-		}
-		else if(game.stateNumber == 4) {
-			if(game.delta >= 1) {
-				if(Angle > 3.1415926 || Angle < 0)				
-					rotateSpeed *= -1;
-				Angle+= rotateSpeed;
-//				System.out.println(Angle);
-				}
-			
 		}
 	
 		AffineTransform.getRotateInstance(Angle, x, y).transform(point2, storepoint2);
