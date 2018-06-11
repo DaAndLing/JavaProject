@@ -16,7 +16,7 @@ public class Launcher {
 		game.start();
 		
 
-        MusicPlayer player = new MusicPlayer("001.wav");   //创建音乐播放器  
+        MusicPlayer player = new MusicPlayer("res/music/001.wav");   //创建音乐播放器  
           //C:\\Users/RRRRRROG/Desktop/001.wav
         	///music/001.wav
         player.start(true);                                        //以开始以循环的形式播放，player(false)为不循环播放  
