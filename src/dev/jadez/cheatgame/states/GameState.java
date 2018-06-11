@@ -30,14 +30,7 @@ public class GameState extends State{
 		player = new Player(classroom, game,120,650,32, 32);
 		progressbar = new ProgressBar(game);
 		enemy = new Enemy(430, 510, 32, 32);
-		//a little bit tricky here, I use a method in class Desk to initialize all the table posiotion
-		//coz I don't want GameState to be lengthy
-//		deskArray = new Desk[17];
-//		for(int i = 0; i < 17; i++)
-//			deskArray[i] = new Desk(0, 0, 0, 0);	//temporary position we have to correct
-//		forSetDesk = new Desk(0, 0, 0, 0);
-//		forSetDesk.setDeskPosition(deskArray);
-		
+
 	}
 	
 	public void tick() {
