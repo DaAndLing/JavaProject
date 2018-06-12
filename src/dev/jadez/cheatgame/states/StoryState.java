@@ -34,45 +34,45 @@ public class StoryState extends State{
 	public void render(Graphics g) {
 		if(game.stateNumber == 11) 
 			g.drawImage(ImageLoader.loadImage("/story/dialog01.png"), 0, 0, null);
-		if(game.stateNumber == 12)
+		else if(game.stateNumber == 12)
 			g.drawImage(ImageLoader.loadImage("/story/dialog02.png"), 0, 0, null);
-		if(game.stateNumber == 13)
+		else if(game.stateNumber == 13)
 			g.drawImage(ImageLoader.loadImage("/story/dialog03.png"), 0, 0, null);
-		if(game.stateNumber == 14)
+		else if(game.stateNumber == 14)
 			g.drawImage(ImageLoader.loadImage("/story/dialog04.png"), 0, 0, null);
-		if(game.stateNumber == 15)
+		else if(game.stateNumber == 15)
 			g.drawImage(ImageLoader.loadImage("/story/dialog05.png"), 0, 0, null);
-		if(game.stateNumber == 16)
+		else if(game.stateNumber == 16)
 			g.drawImage(ImageLoader.loadImage("/story/dialog06.png"), 0, 0, null);
-		if(game.stateNumber == 17)
+		else if(game.stateNumber == 17)
 			g.drawImage(ImageLoader.loadImage("/story/dialog07.png"), 0, 0, null);
-		if(game.stateNumber == 18)
+		else if(game.stateNumber == 18)
 			g.drawImage(ImageLoader.loadImage("/story/dialog08.png"), 0, 0, null);
-		if(game.stateNumber == 19)
+		else if(game.stateNumber == 19)
 			g.drawImage(ImageLoader.loadImage("/story/dialog09.png"), 0, 0, null);
-		if(game.stateNumber == 20)
+		else if(game.stateNumber == 20)
 			g.drawImage(ImageLoader.loadImage("/story/dialog10.png"), 0, 0, null);
-		if(game.stateNumber == 21)
+		else if(game.stateNumber == 21)
 			g.drawImage(ImageLoader.loadImage("/story/dialog11.png"), 0, 0, null);
-		if(game.stateNumber == 22)
+		else if(game.stateNumber == 22)
 			g.drawImage(ImageLoader.loadImage("/story/dialog12.png"), 0, 0, null);
-		if(game.stateNumber == 23)
+		else if(game.stateNumber == 23)
 			g.drawImage(ImageLoader.loadImage("/story/dialog13.png"), 0, 0, null);
-		if(game.stateNumber == 24)
+		else if(game.stateNumber == 24)
 			g.drawImage(ImageLoader.loadImage("/story/dialog14.png"), 0, 0, null);
-		if(game.stateNumber == 25)
+		else if(game.stateNumber == 25)
 			g.drawImage(ImageLoader.loadImage("/story/dialog15.png"), 0, 0, null);
-		if(game.stateNumber == 26)
+		else if(game.stateNumber == 26)
 			g.drawImage(ImageLoader.loadImage("/story/dialog16.png"), 0, 0, null);
-		if(game.stateNumber == 27)
+		else if(game.stateNumber == 27)
 			g.drawImage(ImageLoader.loadImage("/story/dialog17.png"), 0, 0, null);
-		if(game.stateNumber == 28)
+		else if(game.stateNumber == 28)
 			g.drawImage(ImageLoader.loadImage("/story/dialog18.png"), 0, 0, null);
-		if(game.stateNumber == 29)
+		else if(game.stateNumber == 29)
 			g.drawImage(ImageLoader.loadImage("/story/dialog19.png"), 0, 0, null);
-		if(game.stateNumber == 30)
+		else if(game.stateNumber == 30)
 			g.drawImage(ImageLoader.loadImage("/story/dialog20.png"), 0, 0, null);
-		if(game.stateNumber == 31)
+		else if(game.stateNumber == 31)
 			g.drawImage(ImageLoader.loadImage("/story/dialog21.png"), 0, 0, null);
 	}
 }
