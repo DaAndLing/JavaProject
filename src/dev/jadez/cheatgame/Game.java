@@ -61,6 +61,13 @@ public class Game implements Runnable{
 	private State storyState12;
 	private State storyState13;
 	private State storyState14;
+	private State storyState15;
+	private State storyState16;
+	private State storyState17;
+	private State storyState18;
+	private State storyState19;
+	private State storyState20;
+	private State storyState21;
 	//private State gameStatetmp;
 	//private Menu menu;
 	//private State menuState;
@@ -127,6 +134,13 @@ public class Game implements Runnable{
 		storyState12 = new StoryState(this);
 		storyState13 = new StoryState(this);
 		storyState14 = new StoryState(this);
+		storyState15 = new StoryState(this);
+		storyState16 = new StoryState(this);
+		storyState17 = new StoryState(this);
+		storyState18 = new StoryState(this);
+		storyState19 = new StoryState(this);
+		storyState20 = new StoryState(this);
+		storyState21 = new StoryState(this);
 	}
 	
 	private void tick() {
@@ -339,6 +353,34 @@ public class Game implements Runnable{
 		if(i == 24) {
 			stateNumber = 24;
 			return storyState14;
+		}
+		if(i == 25) {
+			stateNumber = 25;
+			return storyState15;
+		}
+		if(i == 26) {
+			stateNumber = 26;
+			return storyState16;
+		}
+		if(i == 27) {
+			stateNumber = 27;
+			return storyState17;
+		}
+		if(i == 28) {
+			stateNumber = 28;
+			return storyState18;
+		}
+		if(i == 29) {
+			stateNumber = 29;
+			return storyState19;
+		}
+		if(i == 30) {
+			stateNumber = 30;
+			return storyState20;
+		}
+		if(i == 31) {
+			stateNumber = 31;
+			return storyState21;
 		}
 		else {
 			stateNumber = -1;

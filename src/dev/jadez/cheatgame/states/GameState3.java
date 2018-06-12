@@ -66,7 +66,7 @@ public class GameState3 extends State{
 		full = progressbar.getFull();
 		if(full) {
 			//System.out.println("win");
-			State.setState(game.getState(24));
+			State.setState(game.getState(25));
 			
 		}
 			

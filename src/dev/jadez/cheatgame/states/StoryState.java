@@ -60,5 +60,19 @@ public class StoryState extends State{
 			g.drawImage(ImageLoader.loadImage("/story/dialog13.png"), 0, 0, null);
 		if(game.stateNumber == 24)
 			g.drawImage(ImageLoader.loadImage("/story/dialog14.png"), 0, 0, null);
+		if(game.stateNumber == 25)
+			g.drawImage(ImageLoader.loadImage("/story/dialog15.png"), 0, 0, null);
+		if(game.stateNumber == 26)
+			g.drawImage(ImageLoader.loadImage("/story/dialog16.png"), 0, 0, null);
+		if(game.stateNumber == 27)
+			g.drawImage(ImageLoader.loadImage("/story/dialog17.png"), 0, 0, null);
+		if(game.stateNumber == 28)
+			g.drawImage(ImageLoader.loadImage("/story/dialog18.png"), 0, 0, null);
+		if(game.stateNumber == 29)
+			g.drawImage(ImageLoader.loadImage("/story/dialog19.png"), 0, 0, null);
+		if(game.stateNumber == 30)
+			g.drawImage(ImageLoader.loadImage("/story/dialog20.png"), 0, 0, null);
+		if(game.stateNumber == 31)
+			g.drawImage(ImageLoader.loadImage("/story/dialog21.png"), 0, 0, null);
 	}
 }

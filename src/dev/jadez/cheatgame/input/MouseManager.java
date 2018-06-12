@@ -45,7 +45,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				if(my >= 500 && my <= 600) {
 					//System.out.println("HIT");
 					//game.initGame();
-					State.setState(game.getState(4));
+					State.setState(game.getState(11));
 					return;
 				}
 				
@@ -61,7 +61,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 12) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(13));
+			State.setState(game.getState(1));
 			return;
 		}
 		if(game.stateNumber == 13) {
@@ -73,7 +73,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 14) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(1));
+			State.setState(game.getState(15));
 			return;
 		}
 		if(game.stateNumber == 15) {
@@ -85,7 +85,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 16) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(17));
+			State.setState(game.getState(2));
 			return;
 		}
 		if(game.stateNumber == 17) {
@@ -97,7 +97,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 18) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(2));
+			State.setState(game.getState(19));
 			return;
 		}
 		if(game.stateNumber == 19) {
@@ -128,15 +128,59 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		if(game.stateNumber == 23) {
 			//System.out.println("HIT");
 			//game.initGame();
-			State.setState(game.getState(3));
+			State.setState(game.getState(24));
 			return;
 		}
 		if(game.stateNumber == 24) {
 			//System.out.println("HIT");
 			//game.initGame();
+			State.setState(game.getState(3));
+			return;
+		}
+		if(game.stateNumber == 25) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(26));
+			return;
+		}
+		if(game.stateNumber == 26) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(27));
+			return;
+		}
+		if(game.stateNumber == 27) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(28));
+			return;
+		}
+		if(game.stateNumber == 28) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(29));
+			return;
+		}
+		if(game.stateNumber == 29) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(30));
+			return;
+		}
+		if(game.stateNumber == 30) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(31));
+			return;
+		}
+		if(game.stateNumber == 31) {
+			//System.out.println("HIT");
+			//game.initGame();
 			State.setState(game.getState(4));
 			return;
 		}
+		
+		
 		
 		if(game.stateNumber == 6) {
 			int mx = e.getX();

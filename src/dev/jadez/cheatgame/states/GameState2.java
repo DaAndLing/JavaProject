@@ -68,7 +68,7 @@ public class GameState2 extends State{
 			
 			//System.out.println("win");
 			//game.init();
-			State.setState(game.getState(19));
+			State.setState(game.getState(17));
 			
 		}
 			
