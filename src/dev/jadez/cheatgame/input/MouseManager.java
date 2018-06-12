@@ -239,7 +239,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			return;
 		}
 		else if(game.stateNumber == 46) {
-			State.setState(game.getState(46));
+			State.setState(game.getState(5));
 			return;
 		}
 		

@@ -42,33 +42,33 @@ public class WinState extends State{
 		
 		if(game.stateNumber == 32) 
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog01.png"), 0, 0, null);
-		if(game.stateNumber == 33)
+		else if(game.stateNumber == 33)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog02.png"), 0, 0, null);
-		if(game.stateNumber == 34)
+		else if(game.stateNumber == 34)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog03.png"), 0, 0, null);
-		if(game.stateNumber == 35)
+		else if(game.stateNumber == 35)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog04.png"), 0, 0, null);
-		if(game.stateNumber == 36)
+		else if(game.stateNumber == 36)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog05.png"), 0, 0, null);
-		if(game.stateNumber == 37)
+		else if(game.stateNumber == 37)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog06.png"), 0, 0, null);
-		if(game.stateNumber == 38)
+		else if(game.stateNumber == 38)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog07.png"), 0, 0, null);
-		if(game.stateNumber == 39)
+		else if(game.stateNumber == 39)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog08.png"), 0, 0, null);
-		if(game.stateNumber == 40)
+		else if(game.stateNumber == 40)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog09.png"), 0, 0, null);
-		if(game.stateNumber == 41)
+		else if(game.stateNumber == 41)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog10.png"), 0, 0, null);
-		if(game.stateNumber == 42)
+		else if(game.stateNumber == 42)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog11.png"), 0, 0, null);
-		if(game.stateNumber == 43)
+		else if(game.stateNumber == 43)
 			g.drawImage(ImageLoader.loadImage("/story/end_dialog12.png"), 0, 0, null);
-		if(game.stateNumber == 44)
+		else if(game.stateNumber == 44)
 			g.drawImage(ImageLoader.loadImage("/end/end_story01.png"), 0, 0, null);
-		if(game.stateNumber == 45)
+		else if(game.stateNumber == 45)
 			g.drawImage(ImageLoader.loadImage("/end/end_story02.png"), 0, 0, null);
-		if(game.stateNumber == 46)
+		else if(game.stateNumber == 46)
 			g.drawImage(ImageLoader.loadImage("/end/end_story03.png"), 0, 0, null);
 
 	}
