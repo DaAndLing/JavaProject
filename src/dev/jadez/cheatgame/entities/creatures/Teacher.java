@@ -13,10 +13,11 @@ public class Teacher extends Creature{
 	public Game game;
 	int xmove_amount = 1;
 	int ymove_amount = 1;
-	
+	public boolean teacherlight;
 	public Teacher(Game game, float x, float y, int width, int height,
 				float scanHeight,double theta) {
 		super(x, y, width, height);
+		teacherlight = false;
 		scan = new Scan(game, scanHeight, theta, (int)x + width / 2, (int)y + height / 2);
 		this.game = game;
 	}	
@@ -81,20 +82,34 @@ public class Teacher extends Creature{
 															//of the teacher	
 		}
 		else if(game.stateNumber == 4) {
-			if(game.delta >= 1) {
-				y += ymove_amount;
-				if(y > 500 || y < 100)
-					ymove_amount *= -1;		
+			teacherlight = game.getMouseManager().getlight;
+			if(teacherlight == true) {
+				//System.out.println("HH");
+				if(game.delta >= 1) {
+					if(x<800) {
+						xmove_amount = 2;
+						x += xmove_amount/2;
+					}
+					//xmove_amount *= -1;		
+				}
+				
+			}
+			else {
+				
+				scan.tick((int)x + width / 2, (int)y + height / 2);
+				
 			}
 			
-			scan.tick((int)x + width / 2, (int)y + height / 2);
 			
 		}
 
 	}
 	@Override	
 	public void render(Graphics g) {
-		scan.render(g);
+		
+		if(teacherlight == false) {
+			scan.render(g);
+		}
 		g.drawImage(Assets.teacher, (int) x, (int) y, null);
 	}
 

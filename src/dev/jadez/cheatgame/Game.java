@@ -37,7 +37,7 @@ public class Game implements Runnable{
 	
 	private BufferStrategy bs;
 	private Graphics g;
-	
+	public boolean light;
 	//States of the full game
 	private State gameState;
 	private State gameState2;

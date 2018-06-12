@@ -21,7 +21,7 @@ public class GameState4 extends State{
 	private Classroom classroom;
 	private ProgressBar progressbar;
 	private boolean full;//progress bar full
-	
+	private boolean light;
 	public GameState4(Game game) {
 		super(game);
 		teacher = new Teacher(game, 120, 680, 32, 32, 400, 20);//x, y, width, height
@@ -30,6 +30,7 @@ public class GameState4 extends State{
 		player = new Player(classroom, game, 430, 380,32, 32);
 		progressbar = new ProgressBar(game);
 		enemy = new Enemy(130, 500, 32, 32);
+		light = false;
 		//a little bit tricky here, I use a method in class Desk to initialize all the table posiotion
 		//coz I don't want GameState to be lengthy
 //		deskArray = new Desk[17];
@@ -44,13 +45,15 @@ public class GameState4 extends State{
 		player.tick();
 		teacher.tick();
 		enemy.tick();
-		
+		light = game.getMouseManager().getlight;
 		
 		//Collision detection
-		if(teacher.getpoly().contains(player.getPlayerPosition())) {
-			//System.out.println("got you, bitch");
-			game.initGame();
-			State.setState(game.getState(9));
+		if(light == false) {
+			if(teacher.getpoly().contains(player.getPlayerPosition())) {
+				//System.out.println("got you, bitch");
+				game.initGame();
+				State.setState(game.getState(9));
+			}
 		}
 			
 		
@@ -85,6 +88,6 @@ public class GameState4 extends State{
 		player.render(g);
 		teacher.render(g);
 		
-		g.drawImage(Assets.lightbulb, 0, 0, null);
+		g.drawImage(Assets.kick, 0, 700,80,80, null);
 	}
 }

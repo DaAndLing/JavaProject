@@ -9,12 +9,13 @@ import dev.jadez.cheatgame.states.GameState;
 import dev.jadez.cheatgame.states.State;
 
 public class MouseManager implements MouseListener,MouseMotionListener {
-
+	public boolean getlight;
 	private Game game;
 	private boolean leftPressed, rightPressed;
 	private int mouseX,mouseY;
 	public MouseManager(Game game) {
 		this.game = game;
+		getlight = false;
 	}
 	
 
@@ -52,128 +53,128 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			}
 		}
 		
-		if(game.stateNumber == 11) {
+		else if(game.stateNumber == 11) {
 					//System.out.println("HIT");
 					//game.initGame();
 			State.setState(game.getState(12));
 			return;
 		}
-		if(game.stateNumber == 12) {
+		else if(game.stateNumber == 12) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(1));
 			return;
 		}
-		if(game.stateNumber == 13) {
+		else if(game.stateNumber == 13) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(14));
 			return;
 		}
-		if(game.stateNumber == 14) {
+		else if(game.stateNumber == 14) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(15));
 			return;
 		}
-		if(game.stateNumber == 15) {
+		else if(game.stateNumber == 15) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(16));
 			return;
 		}
-		if(game.stateNumber == 16) {
+		else if(game.stateNumber == 16) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(2));
 			return;
 		}
-		if(game.stateNumber == 17) {
+		else if(game.stateNumber == 17) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(18));
 			return;
 		}
-		if(game.stateNumber == 18) {
+		else if(game.stateNumber == 18) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(19));
 			return;
 		}
-		if(game.stateNumber == 19) {
+		else if(game.stateNumber == 19) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(20));
 			return;
 		}
-		if(game.stateNumber == 20) {
+		else if(game.stateNumber == 20) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(21));
 			return;
 		}
-		if(game.stateNumber == 21) {
+		else if(game.stateNumber == 21) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(22));
 			return;
 		}
-		if(game.stateNumber == 22) {
+		else if(game.stateNumber == 22) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(23));
 			return;
 		}
 		
-		if(game.stateNumber == 23) {
+		else if(game.stateNumber == 23) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(24));
 			return;
 		}
-		if(game.stateNumber == 24) {
+		else if(game.stateNumber == 24) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(3));
 			return;
 		}
-		if(game.stateNumber == 25) {
+		else if(game.stateNumber == 25) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(26));
 			return;
 		}
-		if(game.stateNumber == 26) {
+		else if(game.stateNumber == 26) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(27));
 			return;
 		}
-		if(game.stateNumber == 27) {
+		else if(game.stateNumber == 27) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(28));
 			return;
 		}
-		if(game.stateNumber == 28) {
+		else if(game.stateNumber == 28) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(29));
 			return;
 		}
-		if(game.stateNumber == 29) {
+		else if(game.stateNumber == 29) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(30));
 			return;
 		}
-		if(game.stateNumber == 30) {
+		else if(game.stateNumber == 30) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(31));
 			return;
 		}
-		if(game.stateNumber == 31) {
+		else if(game.stateNumber == 31) {
 			//System.out.println("HIT");
 			//game.initGame();
 			State.setState(game.getState(4));
@@ -182,7 +183,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 		
 		
 		
-		if(game.stateNumber == 6) {
+		else if(game.stateNumber == 6) {
 			int mx = e.getX();
 			int my = e.getY();
 			
@@ -195,7 +196,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				
 			}
 			
-			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
+			else if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
 				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
@@ -204,7 +205,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				
 			}
 		}
-		if(game.stateNumber == 7) {
+		else if(game.stateNumber == 7) {
 			int mx = e.getX();
 			int my = e.getY();
 			
@@ -217,7 +218,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				
 			}
 			
-			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
+			else if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
 				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
@@ -226,7 +227,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				
 			}
 		}
-		if(game.stateNumber == 8) {
+		else if(game.stateNumber == 8) {
 			int mx = e.getX();
 			int my = e.getY();
 			
@@ -239,7 +240,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				
 			}
 			
-			if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
+			else if(mx >= game.width/2 + 50  && mx <= game.width/2 +170) {
 				if(my >= 700 && my <= 800) {
 					//System.out.println("HIT");
 					//game.initGame();
@@ -248,7 +249,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				
 			}
 		}
-		if(game.stateNumber == 9) {
+		else if(game.stateNumber == 9) {
 			int mx = e.getX();
 			int my = e.getY();
 			
@@ -270,7 +271,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				
 			}
 		}
-		if(game.stateNumber == 10) {
+		else if(game.stateNumber == 10) {
 			int mx = e.getX();
 			int my = e.getY();
 			
@@ -282,6 +283,19 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				}
 				
 			}
+		}
+		else if(game.stateNumber == 4) {
+			int mx = e.getX();
+			int my = e.getY();
+			
+			if(mx >= 0 && mx <=90) {
+				if(my >= 700 && my <= 800) {
+					//System.out.println("HIT");
+					getlight = true;
+				}
+				
+			}
+			
 		}
 
 	}
