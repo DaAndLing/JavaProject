@@ -70,6 +70,10 @@ public class LoseState extends State{
 		}
 		else if(i == 9) {
 			g.drawImage(Assets.LosePage10, 0, 0, null);
+			i++;
+		}
+		else if(i == 10) {
+			g.drawImage(Assets.LosePage10, 0, 0, null);
 			Graphics2D g2d = (Graphics2D)g;
 			g.drawImage(Assets.btnRestart, game.width/2 - 170, 700, null);
 			g.drawImage(Assets.btnMenu, game.width/2 + 50, 700, null);
