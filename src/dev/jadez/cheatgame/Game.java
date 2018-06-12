@@ -68,6 +68,22 @@ public class Game implements Runnable{
 	private State storyState19;
 	private State storyState20;
 	private State storyState21;
+	
+	private State winState1;
+	private State winState2;
+	private State winState3;
+	private State winState4;
+	private State winState5;
+	private State winState6;
+	private State winState7;
+	private State winState8;
+	private State winState9;
+	private State winState10;
+	private State winState11;
+	private State winState12;
+	private State winState13;
+	private State winState14;
+	private State winState15;
 	//private State gameStatetmp;
 	//private Menu menu;
 	//private State menuState;
@@ -141,6 +157,21 @@ public class Game implements Runnable{
 		storyState19 = new StoryState(this);
 		storyState20 = new StoryState(this);
 		storyState21 = new StoryState(this);
+		winState1 = new WinState(this);
+		winState2 = new WinState(this);
+		winState3 = new WinState(this);
+		winState4 = new WinState(this);
+		winState5 = new WinState(this);
+		winState6 = new WinState(this);
+		winState7 = new WinState(this);
+		winState8 = new WinState(this);
+		winState9 = new WinState(this);
+		winState10 = new WinState(this);
+		winState11 = new WinState(this);
+		winState12 = new WinState(this);
+		winState13 = new WinState(this);
+		winState14 = new WinState(this);
+		winState15 = new WinState(this);
 	}
 	
 	private void tick() {
@@ -381,6 +412,66 @@ public class Game implements Runnable{
 		if(i == 31) {
 			stateNumber = 31;
 			return storyState21;
+		}
+		if(i == 32) {
+			stateNumber = 32;
+			return winState1;
+		}
+		if(i == 33) {
+			stateNumber = 33;
+			return winState2;
+		}
+		if(i == 34) {
+			stateNumber = 34;
+			return winState3;
+		}
+		if(i == 35) {
+			stateNumber = 35;
+			return winState4;
+		}
+		if(i == 36) {
+			stateNumber = 36;
+			return winState5;
+		}
+		if(i == 37) {
+			stateNumber = 37;
+			return winState6;
+		}
+		if(i == 38) {
+			stateNumber = 38;
+			return winState7;
+		}
+		if(i == 39) {
+			stateNumber = 39;
+			return winState8;
+		}
+		if(i == 40) {
+			stateNumber = 40;
+			return winState9;
+		}
+		if(i == 41) {
+			stateNumber = 41;
+			return winState10;
+		}
+		if(i == 42) {
+			stateNumber = 42;
+			return winState11;
+		}
+		if(i == 43) {
+			stateNumber = 43;
+			return winState12;
+		}
+		if(i == 44) {
+			stateNumber = 44;
+			return winState13;
+		}
+		if(i == 45) {
+			stateNumber = 45;
+			return winState14;
+		}
+		if(i == 46) {
+			stateNumber = 46;
+			return winState15;
 		}
 		else {
 			stateNumber = -1;

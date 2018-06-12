@@ -46,7 +46,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				if(my >= 500 && my <= 600) {
 					//System.out.println("HIT");
 					//game.initGame();
-					State.setState(game.getState(11));
+					State.setState(game.getState(31));
 					return;
 				}
 				
@@ -180,8 +180,68 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 			State.setState(game.getState(4));
 			return;
 		}
-		
-		
+		else if(game.stateNumber == 32) {
+			//System.out.println("HIT");
+			//game.initGame();
+			State.setState(game.getState(33));
+			return;
+		}
+		else if(game.stateNumber == 33) {
+			State.setState(game.getState(34));
+			return;
+		}
+		else if(game.stateNumber == 34) {
+			State.setState(game.getState(35));
+			return;
+		}
+		else if(game.stateNumber == 35) {
+			State.setState(game.getState(36));
+			return;
+		}
+		else if(game.stateNumber == 36) {
+			State.setState(game.getState(37));
+			return;
+		}
+		else if(game.stateNumber == 37) {
+			State.setState(game.getState(38));
+			return;
+		}
+		else if(game.stateNumber == 38) {
+			State.setState(game.getState(39));
+			return;
+		}
+		else if(game.stateNumber == 39) {
+			State.setState(game.getState(40));
+			return;
+		}
+		else if(game.stateNumber == 40) {
+			State.setState(game.getState(41));
+			return;
+		}
+		else if(game.stateNumber == 41) {
+			State.setState(game.getState(42));
+			return;
+		}
+		else if(game.stateNumber == 42) {
+			State.setState(game.getState(43));
+			return;
+		}
+		else if(game.stateNumber == 43) {
+			State.setState(game.getState(44));
+			return;
+		}
+		else if(game.stateNumber == 44) {
+			State.setState(game.getState(45));
+			return;
+		}
+		else if(game.stateNumber == 45) {
+			State.setState(game.getState(46));
+			return;
+		}
+		else if(game.stateNumber == 46) {
+			State.setState(game.getState(46));
+			return;
+		}
 		
 		else if(game.stateNumber == 6) {
 			int mx = e.getX();
