@@ -16,7 +16,7 @@ import dev.jadez.cheatgame.gfx.Assets;
 public class LoseState extends State{
 	private Canvas canvas;
 	private JFrame frame;
-
+	private int i = 0;
 	
 	public LoseState(Game game) {
 		// TODO
@@ -32,12 +32,53 @@ public class LoseState extends State{
 
 
 	public void render(Graphics g) {
-
-		g.drawImage(Assets.LosePage10, 0, 0, null);
-		
-		Graphics2D g2d = (Graphics2D)g;
-		g.drawImage(Assets.btnRestart, game.width/2 - 170, 700, null);
-		g.drawImage(Assets.btnMenu, game.width/2 + 50, 700, null);
-
+		if(i == 0) {
+			g.drawImage(Assets.LosePage1, 0, 0, null);
+			i++;
+		}
+		else if(i == 1) {
+			g.drawImage(Assets.LosePage2, 0, 0, null);
+			i++;
+		}
+		else if(i == 2) {
+			g.drawImage(Assets.LosePage3, 0, 0, null);
+			i++;
+		}
+		else if(i == 3) {
+			g.drawImage(Assets.LosePage4, 0, 0, null);
+			i++;
+		}
+		else if(i == 4) {
+			g.drawImage(Assets.LosePage5, 0, 0, null);
+			i++;
+		}
+		else if(i == 5) {
+			g.drawImage(Assets.LosePage6, 0, 0, null);
+			i++;
+		}
+		else if(i == 6) {
+			g.drawImage(Assets.LosePage7, 0, 0, null);
+			i++;
+		}
+		else if(i == 7) {
+			g.drawImage(Assets.LosePage8, 0, 0, null);
+			i++;
+		}
+		else if(i == 8) {
+			g.drawImage(Assets.LosePage9, 0, 0, null);
+			i++;
+		}
+		else if(i == 9) {
+			g.drawImage(Assets.LosePage10, 0, 0, null);
+			Graphics2D g2d = (Graphics2D)g;
+			g.drawImage(Assets.btnRestart, game.width/2 - 170, 700, null);
+			g.drawImage(Assets.btnMenu, game.width/2 + 50, 700, null);
+		}
+		try {
+				Thread.sleep(100);
+		} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+		}
 	}
 }
