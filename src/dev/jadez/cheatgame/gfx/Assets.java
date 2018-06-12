@@ -25,7 +25,7 @@ public class Assets {
 		//tree = sheet.crop(0, height, width, height);
 		
 		classBack = ImageLoader.loadImage("/classroom/classroom.png");
-		desks = ImageLoader.loadImage("/classroom/desks.png");
+		desks = ImageLoader.loadImage("/classroom/desks_ver2.png");
 		//new
 		btnStart = ImageLoader.loadImage("/classroom/btnStart.png");
 		StartPage = ImageLoader.loadImage("/classroom/StartPage.png");

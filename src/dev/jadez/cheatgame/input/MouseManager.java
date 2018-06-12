@@ -46,7 +46,7 @@ public class MouseManager implements MouseListener,MouseMotionListener {
 				if(my >= 500 && my <= 600) {
 					//System.out.println("HIT");
 					//game.initGame();
-					State.setState(game.getState(11));
+					State.setState(game.getState(31));
 					return;
 				}
 				
