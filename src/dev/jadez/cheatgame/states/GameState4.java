@@ -9,6 +9,8 @@ import dev.jadez.cheatgame.entities.creatures.Player;
 import dev.jadez.cheatgame.entities.creatures.Teacher;
 import dev.jadez.cheatgame.entities.fixedObject.Classroom;
 import dev.jadez.cheatgame.entities.fixedObject.Desk;
+import dev.jadez.cheatgame.gfx.Assets;
+import dev.jadez.cheatgame.gfx.ImageLoader;
 
 public class GameState4 extends State{
 	private Player player;
@@ -82,5 +84,7 @@ public class GameState4 extends State{
 		
 		player.render(g);
 		teacher.render(g);
+		
+		g.drawImage(Assets.lightbulb, 0, 0, null);
 	}
 }
