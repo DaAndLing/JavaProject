@@ -20,7 +20,6 @@ import dev.jadez.cheatgame.states.State;
 import dev.jadez.cheatgame.states.StoryState;
 import dev.jadez.cheatgame.states.WinState;
 
-
 /** Main Game class*/
 public class Game implements Runnable{
 	
@@ -84,9 +83,7 @@ public class Game implements Runnable{
 	private State winState13;
 	private State winState14;
 	private State winState15;
-	//private State gameStatetmp;
-	//private Menu menu;
-	//private State menuState;
+
 	
 	//Input Manager
 	private KeyManager keyManager;
@@ -104,7 +101,6 @@ public class Game implements Runnable{
 		this.height = height;
 		this.title = title;	
 		keyManager = new KeyManager();
-		//new
 		mouseManager = new MouseManager(this);
 	}
 	
@@ -122,8 +118,7 @@ public class Game implements Runnable{
 		frame = display.getFrame();
 		menuState = new MenuState(this);
 
-		// set current state
-		//State.setState(gameState);
+		// Set current state
 		State.setState(menuState);
 	}
 	

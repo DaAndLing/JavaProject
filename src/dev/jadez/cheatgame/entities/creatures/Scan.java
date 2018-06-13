@@ -7,8 +7,6 @@ import java.awt.Polygon;
 import java.awt.geom.AffineTransform;
 import dev.jadez.cheatgame.*;
 /** The triangle part for the teacher
- *  !!Experimental!!
- *  !!NEEDS TO BE MODIFID!! 
  */
 public class Scan {
 	double height,theta,rotation;
@@ -72,13 +70,7 @@ public class Scan {
 		point3.x =  x - (int)((height)*Math.tan(Math.toRadians(theta)));
 		point3.y = (int)(y+height);
 		
-		/*
-		point2.x  = (int)(x+height);				
-		point2.y  = y- (int)((height)*Math.tan(Math.toRadians(theta)));
 		
-		point3.x = (int)(x+height);
-		point3.y = y+ (int)((height)*Math.tan(Math.toRadians(theta)));
-		*/
 		if(game.stateNumber == 1) {
 			if(game.delta >= 1) {
 				if(Angle > 1.3 || Angle < -1.3)				
