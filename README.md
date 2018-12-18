@@ -1,5 +1,6 @@
 # JavaProject
-Java期末Project
+This is our project of java lecture 
 
-A work journal
-[HACK MD](https://hackmd.io/JMYzjWJbRx-TGWfCAwNK8A?both)
+We want to represent a classic game - cheat in class
+
+Work journal:[HACK MD](https://hackmd.io/JMYzjWJbRx-TGWfCAwNK8A?both)
