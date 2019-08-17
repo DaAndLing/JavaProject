@@ -13,9 +13,9 @@ import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;  
   
 public class MusicPlayer {  
-    private String musicPath; //音频文件  
-    private volatile boolean run = true;  //记录音频是否播放  
-    private Thread mainThread;   //播放音频的任务线程  
+    private String musicPath; // Music path
+    private volatile boolean run = true;   
+    private Thread mainThread;    
       
     private AudioInputStream audioStream;  
     private AudioFormat audioFormat;  
@@ -26,17 +26,16 @@ public class MusicPlayer {
         prefetch();  
     }  
       
-    //数据准备  
+    // Prepocessing  
     private void prefetch(){  
         try{  
-        //获取音频输入流  
+        // Get audio stream
         audioStream = AudioSystem.getAudioInputStream(new File(musicPath));  
-        //获取音频的编码对象  
+        // Get file format
         audioFormat = audioStream.getFormat();  
-        //包装音频信息  
         DataLine.Info dataLineInfo = new DataLine.Info(SourceDataLine.class,  
                 audioFormat,AudioSystem.NOT_SPECIFIED);  
-        //使用包装音频信息后的Info类创建源数据行，充当混频器的源  
+        // Source of mixer
         sourceDataLine = (SourceDataLine)AudioSystem.getLine(dataLineInfo);  
           
         sourceDataLine.open(audioFormat);  
@@ -51,7 +50,7 @@ public class MusicPlayer {
         }  
           
     }  
-    //析构函数:关闭音频读取流和数据行  
+    // Destructor
     protected void finalize() throws Throwable{  
         super.finalize();  
         sourceDataLine.drain();  
@@ -59,7 +58,8 @@ public class MusicPlayer {
         audioStream.close();  
     }  
       
-    //播放音频:通过loop参数设置是否循环播放  
+    // play music
+    // if true : loop playing
     private void playMusic(boolean loop)throws InterruptedException {  
         try{  
                 if(loop){  
@@ -67,8 +67,9 @@ public class MusicPlayer {
                         playMusic();  
                     }  
                 }else{  
+                	// play music only one time
+                	// and then recollect all the resources
                     playMusic();  
-                    //清空数据行并关闭  
                     sourceDataLine.drain();  
                     sourceDataLine.close();  
                     audioStream.close();  
@@ -85,19 +86,18 @@ public class MusicPlayer {
             synchronized(this){  
                 run = true;  
             }  
-            //通过数据行读取音频数据流，发送到混音器;  
-            //数据流传输过程：AudioInputStream -> SourceDataLine;  
+            // Get music stream, and then send it to mixer
+            // AudioInputStream -> SourceDataLine;  
             audioStream = AudioSystem.getAudioInputStream(new File(musicPath));  
             int count;  
             byte tempBuff[] = new byte[1024];  
               
-                while((count = audioStream.read(tempBuff,0,tempBuff.length)) != -1){  
-                    synchronized(this){  
-                    while(!run)  
-                        wait();  
-                    }  
-                    sourceDataLine.write(tempBuff,0,count);  
-                              
+            while((count = audioStream.read(tempBuff,0,tempBuff.length)) != -1){  
+                synchronized(this){  
+	                while(!run)  
+	                    wait();  
+                }  
+                sourceDataLine.write(tempBuff,0,count);  
             }  
   
         }catch(UnsupportedAudioFileException ex){  
@@ -110,24 +110,7 @@ public class MusicPlayer {
           
     }  
       
-      
-    //暂停播放音频  
-    private void stopMusic(){  
-        synchronized(this){  
-            run = false;  
-            notifyAll();  
-        }  
-    }  
-    //继续播放音乐  
-    private void continueMusic(){  
-        synchronized(this){  
-             run = true;  
-             notifyAll();  
-        }  
-    }  
-      
-      
-    //外部调用控制方法:生成音频主线程；  
+    // Create music's main thread
     public void start(boolean loop){  
         mainThread = new Thread(new Runnable(){  
             public void run(){  
@@ -140,40 +123,4 @@ public class MusicPlayer {
         });  
         mainThread.start();  
     }  
-      
-    //外部调用控制方法：暂停音频线程  
-    public void stop(){  
-        new Thread(new Runnable(){  
-            public void run(){  
-                stopMusic();  
-                  
-            }  
-        }).start();  
-    }  
-    //外部调用控制方法：继续音频线程  
-    public void continues(){  
-        new Thread(new Runnable(){  
-            public void run(){  
-                continueMusic();  
-            }  
-        }).start();  
-    }  
-//  
-////Test  
-//    public static void main(String[] args) throws InterruptedException{  
-//  
-//        MusicPlayer player = new MusicPlayer("bgm/1.wav");   //创建音乐播放器  
-//          
-//        player.start(true);                                        //以开始以循环的形式播放，player(false)为不循环播放  
-//          
-//        TimeUnit.SECONDS.sleep(5);  
-//          
-//        player.stop();                        //暂停播放音频  
-//          
-//        TimeUnit.SECONDS.sleep(4);  
-//          
-//        player.continues();                //继续开始播放音频  
-//          
-//    }  
-  
  }  
